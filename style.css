@@ -1,0 +1,41 @@
+/* General Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+  }
+    header {
+    background: #007BFF;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  section {
+    padding: 2rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  footer {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 1rem;
+  }
+  
