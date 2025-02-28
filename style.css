@@ -1,41 +1,70 @@
 /* General Styles */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif; /* Example font */
 }
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     line-height: 1.6;
-  }
-    header {
+}
+
+header {
     background: #007BFF;
     color: white;
     padding: 1rem 0;
     text-align: center;
-  }
-  
-  nav a {
+}
+
+nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
-  }
-  
-  nav a:hover {
+}
+
+nav a:hover {
     text-decoration: underline;
-  }
-  
-  section {
+}
+
+section {
     padding: 2rem;
     border-bottom: 1px solid #ddd;
-  }
-  
-  footer {
+}
+
+footer {
     background: #f4f4f4;
     text-align: center;
     padding: 1rem;
-  }
-  
+}
+
+/* Project Styles */
+.project {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.project h3 {
+    margin-top: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Styles for screens smaller than 768px */
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 1rem;
+    }
+}
