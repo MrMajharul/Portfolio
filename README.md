@@ -26,7 +26,7 @@ This is a personal portfolio website featuring a **Dark Mode Toggle** option. Th
 3. Click the **🌙 Dark Mode Toggle** button to switch themes.
 
 ## 🖥️ Demo
-Check out the live demo [here](#).
+Check out the live demo [here](https://MrMajharul.github.io/portfolio/)
 
 ## 📬 Contact
 For any inquiries, reach out via:
