@@ -7,17 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <button id="darkModeToggle">🌙 </button>
-    </header>
-    
+    <!-- Cover Photo -->
+    <div class="cover-photo">
+        <img src="cover.jpg" alt="Cover Photo">
+        <div class="cover-content">
+            <h1>Welcome to My Portfolio</h1>
+            <nav class="top-nav">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="top-buttons">
+                <button id="darkModeToggle">🌙</button>
+                <button id="menuButton" class="menu-button">☰</button>
+            </div>
+        </div>
+    </div>
+
     <section id="about">
         <h2>About Me</h2>
         <p>Hello! I'm an engineering student specializing in Computer Science and Engineering. I'm passionate about technology, coding, and solving real-world problems.</p>
@@ -44,7 +51,7 @@
     
     <section id="contact">
         <h2>Contact</h2>
-        <form>
+        <form class="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
@@ -60,13 +67,25 @@
     
     <footer>
         <p>© 2025 Majharul Islam</p>
-        <div>
+        <div class="social-links">
             <a href="https://github.com/MrMajharul" target="_blank">GitHub</a>
             <a href="https://www.linkedin.com/in/majharul-islam-68945326b/" target="_blank">LinkedIn</a>
-            <a href="mailto:majharul.cs@gmail.com">Email</a>
+            <a href="mailto:mrmajharulislam@gmail.com">Email</a>
+        </div>
+        <div class="subscribe-form">
+            <input type="email" placeholder="Your email" id="subscribeEmail">
+            <button id="subscribeButton">Subscribe</button>
         </div>
     </footer>
     
+    <!-- Menu Bar -->
+    <div class="menu-bar" id="menuBar">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

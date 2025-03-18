@@ -13,22 +13,78 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-header {
-    background: #007BFF;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+/* Cover Photo Styles */
+.cover-photo {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    overflow: hidden;
+    position: relative;
 }
 
-nav a {
+.cover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: To make text more readable */
+}
+
+.cover-content h1 {
+    margin-bottom: 1rem;
+}
+
+.cover-content nav.top-nav {
+    margin-bottom: 1rem;
+}
+
+.cover-content nav.top-nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover {
+.cover-content nav.top-nav a:hover {
     text-decoration: underline;
+}
+
+.cover-content .top-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.cover-content .top-buttons button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.cover-content .top-buttons button:hover {
+    color: #ddd;
+}
+
+header {
+    display: none; /* Hide the original header */
 }
 
 section {
@@ -40,6 +96,111 @@ footer {
     background: #f4f4f4;
     text-align: center;
     padding: 1rem;
+}
+
+/* New Footer Styles */
+footer .social-links a {
+    margin: 0 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: #0056b3;
+}
+
+footer .subscribe-form input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+footer .subscribe-form button {
+    padding: 10px 20px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer .subscribe-form button:hover {
+    background: #0056b3;
+}
+
+/* Menu Button Styles */
+.menu-button {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.menu-button:hover {
+    color: #ddd;
+}
+
+/* Menu Bar Styles */
+.menu-bar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #007BFF;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    display: none; /* Initially hide the menu bar */
+}
+
+.menu-bar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.menu-bar a:hover {
+    background: #0056b3;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    margin: 5px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.contact-form button {
+    padding: 5px 10px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background: #0056b3;
 }
 
 /* Project Styles */
@@ -81,16 +242,13 @@ footer {
 
 /* Dark Mode Toggle Button */
 #darkModeToggle {
-    background: #ffcc00;
+    background: none;
     border: none;
-    padding: 10px 15px;
-    margin-top: 10px;
+    color: white;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    font-weight: bold;
+    font-size: 24px;
 }
 
 #darkModeToggle:hover {
-    background: #e6b800;
+    color: #ddd;
 }

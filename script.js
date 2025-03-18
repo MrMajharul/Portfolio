@@ -17,3 +17,24 @@ darkModeToggle.addEventListener("click", () => {
         localStorage.setItem("darkMode", "disabled");
     }
 });
+
+// Subscribe Form Script
+const subscribeButton = document.getElementById("subscribeButton");
+
+subscribeButton.addEventListener("click", () => {
+    const email = document.getElementById("subscribeEmail").value;
+    if (email) {
+        alert(`Thank you for subscribing with ${email}`);
+        // Here you can add functionality to send the email to your server
+    } else {
+        alert("Please enter a valid email address.");
+    }
+});
+
+// Menu Button Toggle Script
+const menuButton = document.getElementById("menuButton");
+const menuBar = document.getElementById("menuBar");
+
+menuButton.addEventListener("click", () => {
+    menuBar.style.display = menuBar.style.display === "none" ? "block" : "none";
+});
