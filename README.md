@@ -3,7 +3,7 @@
 This is a personal portfolio website featuring a **Dark Mode Toggle** option. The project is built with **HTML, CSS, and JavaScript** and includes sections for About, Projects, Skills, and Contact.
 
 ## 🚀 Features
-- 🌙 **Dark Mode Toggle** (Saves user preference using `localStorage`)
+- 🌙 **Dark Mode Toggle**
 - 🎨 **Responsive Design**
 - 💻 **Project Showcase**
 - 📩 **Contact Form**
@@ -32,6 +32,6 @@ Check out the live demo [here]( https://mrmajharul.github.io/Portfolio/)
 For any inquiries, reach out via:
 - GitHub: [MrMajharul](https://github.com/MrMajharul)
 - LinkedIn: [Majharul Islam](https://www.linkedin.com/in/majharul-islam-68945326b/)
-- Email: [majharul.cs@gmail.com](mailto:mrmajharulislam00@gmail.com)
+- Email: [mrmajharulislam00@gmail.com](mailto:mrmajharulislam00@gmail.com)
 
 🚀 Happy Coding! 🎉
