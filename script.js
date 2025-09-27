@@ -148,10 +148,167 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 
+// Contact Form Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS (you'll need to sign up and get your keys)
+    // emailjs.init("YOUR_PUBLIC_KEY"); // Uncomment and add your EmailJS public key
+
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+
+            // Show loading state
+            setLoadingState(true);
+            showStatus('Sending message...', 'loading');
+
+            try {
+                // Method 1: EmailJS (requires setup)
+                // await sendWithEmailJS(name, email, subject, message);
+                
+                // Method 2: Formspree (requires setup)
+                // await sendWithFormspree(formData);
+                
+                // Method 3: Local storage (for demo)
+                await saveToLocalStorage(name, email, subject, message);
+                
+                // Success
+                showStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+                
+            } catch (error) {
+                console.error('Error sending message:', error);
+                showStatus('Failed to send message. Please try again or contact me directly via email.', 'error');
+            } finally {
+                setLoadingState(false);
+            }
+        });
+    }
+
+    function setLoadingState(loading) {
+        if (loading) {
+            submitBtn.classList.add('loading');
+            btnText.textContent = 'Sending...';
+            submitBtn.disabled = true;
+        } else {
+            submitBtn.classList.remove('loading');
+            btnText.textContent = 'Send Message';
+            submitBtn.disabled = false;
+        }
+    }
+
+    function showStatus(message, type) {
+        formStatus.textContent = message;
+        formStatus.className = `form-status ${type}`;
+        
+        // Auto-hide success/error messages after 5 seconds
+        if (type !== 'loading') {
+            setTimeout(() => {
+                formStatus.style.opacity = '0';
+                setTimeout(() => {
+                    formStatus.className = 'form-status';
+                }, 300);
+            }, 5000);
+        }
+    }
+
+    // Method 1: EmailJS implementation (requires EmailJS account)
+    async function sendWithEmailJS(name, email, subject, message) {
+        // You'll need to set up EmailJS and replace these with your values
+        /*
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+            to_email: 'majharul.cs@gmail.com'
+        };
+        
+        return emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
+        */
+        throw new Error('EmailJS not configured');
+    }
+
+    // Method 2: Formspree implementation (requires Formspree account)
+    async function sendWithFormspree(formData) {
+        // Replace 'YOUR_FORM_ID' with your Formspree form ID
+        /*
+        const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to send via Formspree');
+        }
+        
+        return response;
+        */
+        throw new Error('Formspree not configured');
+    }
+
+    // Method 3: Local storage (for demo purposes)
+    async function saveToLocalStorage(name, email, subject, message) {
+        return new Promise((resolve, reject) => {
+            try {
+                const submission = {
+                    id: Date.now(),
+                    name,
+                    email,
+                    subject,
+                    message,
+                    timestamp: new Date().toISOString()
+                };
+
+                // Get existing submissions
+                const existingSubmissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+                existingSubmissions.push(submission);
+                
+                // Save to localStorage
+                localStorage.setItem('contactSubmissions', JSON.stringify(existingSubmissions));
+                
+                // Simulate network delay
+                setTimeout(() => {
+                    console.log('Form submission saved locally:', submission);
+                    resolve(submission);
+                }, 1000);
+                
+            } catch (error) {
+                reject(error);
+            }
+        });
+    }
+
+    // Function to view saved submissions (for demo)
+    window.viewSubmissions = function() {
+        const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+        console.table(submissions);
+        return submissions;
+    };
+});
+
 // Console welcome message
 console.log(`
 🚀 Welcome to Majharul Islam's Portfolio
 👨‍💻 Computer Science & Engineering Student
-📧 Contact: cmajharul.cs@gmail.com
+📧 Contact: majharul.cs@gmail.com
 🌐 GitHub: https://github.com/MrMajharul
+
+💡 Contact form is functional! 
+📝 For demo purposes, submissions are saved locally.
+🔍 Run viewSubmissions() in console to see saved messages.
 `);

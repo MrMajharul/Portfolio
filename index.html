@@ -6,6 +6,8 @@
     <title>Majharul Islam - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -269,7 +271,7 @@
                     </div>
                 </div>
                 <div class="contact-form fade-in">
-                    <form>
+                    <form id="contact-form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -286,10 +288,11 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%;">
                             <i class="fas fa-paper-plane"></i>
-                            Send Message
+                            <span id="btn-text">Send Message</span>
                         </button>
+                        <div id="form-status" class="form-status"></div>
                     </form>
                 </div>
             </div>
