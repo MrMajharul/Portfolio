@@ -3,89 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Majharul Islam - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Cover Photo -->
-    <div class="cover-photo">
-        <img src="cover.jpg" alt="Cover Photo">
-        <div class="cover-content">
-            <h1>Welcome to My Portfolio</h1>
-            <nav class="top-nav">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div class="top-buttons">
-                <button id="darkModeToggle">🌙</button>
-                <button id="menuButton" class="menu-button">☰</button>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Majharul Islam</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <h1>Hello! I'm Majharul Islam.</h1>
-        <p>I'm an engineering student specializing in Computer Science and Engineering. I'm passionate about technology, coding, and solving real-world problems.</p>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Personal Portfolio</h3>
-            <p>This is the portfolio you're working on right now! It's built using HTML, CSS, and JavaScript.</p>
-            <a href="https://github.com/MrMajharul/portfolio" target="_blank">View on GitHub</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm Majharul Islam</h1>
+                <div class="subtitle">Computer Science & Engineering Student</div>
+                <p>Passionate about creating innovative solutions through code. Currently pursuing my B.Sc in CSE at Green University of Bangladesh, with a focus on web development and software engineering.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i>
+                        View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="majharul-photo.png" alt="Majharul Islam" class="profile-img">
+            </div>
         </div>
     </section>
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>React, Node.js</li>
-            <li>Python, C++, Java</li>
-            <li>Git, GitHub</li>
-        </ul>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <form class="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-    
-    <footer>
-        <p>© 2025 Majharul Islam</p>
-        <div class="social-links">
-            <a href="https://github.com/MrMajharul" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/majharul-islam-68945326b/" target="_blank">LinkedIn</a>
-            <a href="mailto:mrmajharulislam@gmail.com">Email</a>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <p class="section-subtitle fade-in">Get to know me better</p>
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <img src="majharul-photo.png" alt="Majharul Islam">
+                </div>
+                <div class="about-text fade-in">
+                    <p>I'm a dedicated 3rd year Computer Science & Engineering student at Green University of Bangladesh, passionate about technology and innovation. My journey in programming began with curiosity and has evolved into a deep love for creating digital solutions.</p>
+                    <p>As the Graphics and Multimedia Coordinator at Green University Computer Club, I've developed strong leadership and project management skills while working on various technical initiatives.</p>
+                    <p>I'm proficient in multiple programming languages and frameworks, with a particular interest in web development and software engineering. My goal is to contribute to meaningful projects that make a positive impact on society.</p>
+                </div>
+            </div>
         </div>
-        <div class="subscribe-form">
-            <input type="email" placeholder="Your email" id="subscribeEmail">
-            <button id="subscribeButton">Subscribe</button>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Skills & Technologies</h2>
+            <p class="section-subtitle fade-in">What I work with</p>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">C</span>
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">Django</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Frameworks & Technologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">Bootstrap</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">MongoDB</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Git & GitHub</span>
+                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item">IntelliJ IDEA</span>
+                        <span class="skill-item">Android Studio</span>
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Postman</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Bengali (Native)</span>
+                        <span class="skill-item">English (Fluent)</span>
+                        <span class="skill-item">Korean (Intermediate)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title fade-in">My Projects</h2>
+            <p class="section-subtitle fade-in">Some of my recent work</p>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Employee Task Management System</h3>
+                        <p class="project-tech">Node.js, Express, MySQL, JavaScript</p>
+                        <p class="project-description">A comprehensive full-stack task management platform with JWT authentication, role-based access, Kanban board, real-time notifications, and advanced analytics dashboard.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MrMajharul/Employee-Task-Management-System" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Hospital Resource Allocation</h3>
+                        <p class="project-tech">HTML, CSS, JavaScript, Chart.js</p>
+                        <p class="project-description">An algorithm-based simulator that optimally allocates hospital resources (beds, ventilators) to patients using Greedy and Knapsack algorithms with priority-based allocation.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MrMajharul/Hospital-Resource-Allocation" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Bangladeshi University Logos</h3>
+                        <p class="project-tech">Python, Web Scraping, ImageMagick</p>
+                        <p class="project-description">Complete collection of PNG logos from 50 major universities in Bangladesh. High-quality 512x512 pixel logos with comprehensive database for educational and research purposes.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MrMajharul/bangladeshi-university-logos" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">PDF to QR Code Generator</h3>
+                        <p class="project-tech">Python</p>
+                        <p class="project-description">A Python utility tool that converts PDF documents into QR codes for easy sharing and access, perfect for digitizing document distribution.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MrMajharul/PDF-to-QR-Code-Generator" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-compress"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Huffman Encoding Simulator</h3>
+                        <p class="project-tech">JavaScript, HTML, CSS</p>
+                        <p class="project-description">Interactive simulator implementing Huffman coding algorithm for data compression, demonstrating optimal binary tree construction and encoding/decoding processes.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MrMajharul/Huffman-Encoding-Simulator" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Event Management System</h3>
+                        <p class="project-tech">Java</p>
+                        <p class="project-description">A comprehensive Java-based event management system with features for organizing, scheduling, and managing events with participant registration and tracking.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MrMajharul/Event-Management-System-with-Java" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <p class="section-subtitle fade-in">Let's work together</p>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>majharul.cs@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+880-XXXX-XXXXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Kusabo, Kanchan, Rupganj, Narayanganj -1461, Bangladesh</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4>Education</h4>
+                            <p>Green University of Bangladesh (GUB)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/MrMajharul" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/majharul-islam-68945326b/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:cmajharul.cs@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 Majharul Islam. All rights reserved.</p>
         </div>
     </footer>
-    
-    <!-- Menu Bar -->
-    <div class="menu-bar" id="menuBar">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </div>
 
     <script src="script.js"></script>
 </body>
