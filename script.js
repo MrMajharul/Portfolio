@@ -1,17 +1,48 @@
-// Portfolio JavaScript - Majharul Islam
+// Portfolio JavaScript - Majharul Islam (Tailwind Version)
 
 // Mobile menu toggle
 const mobileMenu = document.querySelector('.mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
-mobileMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+mobileMenu?.addEventListener('click', () => {
+    navLinks?.classList.toggle('hidden');
+    
+    // Animate hamburger menu
+    const lines = mobileMenu.querySelectorAll('div');
+    lines.forEach((line, index) => {
+        if (navLinks?.classList.contains('hidden')) {
+            // Menu closed - reset to hamburger
+            line.style.transform = 'rotate(0deg)';
+            line.style.opacity = '1';
+        } else {
+            // Menu open - transform to X
+            if (index === 0) {
+                line.style.transform = 'rotate(45deg) translateY(8px)';
+            } else if (index === 1) {
+                line.style.opacity = '0';
+            } else if (index === 2) {
+                line.style.transform = 'rotate(-45deg) translateY(-8px)';
+            }
+        }
+    });
 });
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+        
+        // Close mobile menu if open
+        if (navLinks && !navLinks.classList.contains('hidden')) {
+            navLinks.classList.add('hidden');
+            // Reset hamburger menu
+            const lines = mobileMenu?.querySelectorAll('div');
+            lines?.forEach(line => {
+                line.style.transform = 'rotate(0deg)';
+                line.style.opacity = '1';
+            });
+        }
+        
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
@@ -24,11 +55,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector('nav');
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar?.classList.add('bg-white/98', 'shadow-xl');
+        navbar?.classList.remove('bg-white/95');
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar?.classList.remove('bg-white/98', 'shadow-xl');
+        navbar?.classList.add('bg-white/95');
     }
 });
 
@@ -198,26 +231,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setLoadingState(loading) {
         if (loading) {
-            submitBtn.classList.add('loading');
+            submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+            submitBtn.classList.remove('hover:scale-105');
             btnText.textContent = 'Sending...';
             submitBtn.disabled = true;
+            // Add spinning animation to icon
+            const icon = submitBtn.querySelector('i');
+            if (icon) {
+                icon.classList.add('animate-spin');
+            }
         } else {
-            submitBtn.classList.remove('loading');
+            submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+            submitBtn.classList.add('hover:scale-105');
             btnText.textContent = 'Send Message';
             submitBtn.disabled = false;
+            // Remove spinning animation
+            const icon = submitBtn.querySelector('i');
+            if (icon) {
+                icon.classList.remove('animate-spin');
+            }
         }
     }
 
     function showStatus(message, type) {
         formStatus.textContent = message;
-        formStatus.className = `form-status ${type}`;
+        
+        // Remove all status classes
+        formStatus.classList.remove('opacity-0', 'translate-y-2', 'bg-green-100', 'text-green-700', 'border-green-300', 'bg-red-100', 'text-red-700', 'border-red-300', 'bg-blue-100', 'text-blue-700', 'border-blue-300');
+        
+        // Add base classes
+        formStatus.classList.add('px-4', 'py-3', 'rounded-lg', 'border', 'font-medium', 'text-center', 'transition-all', 'duration-300');
+        
+        // Add type-specific classes
+        if (type === 'success') {
+            formStatus.classList.add('bg-green-100', 'text-green-700', 'border-green-300');
+        } else if (type === 'error') {
+            formStatus.classList.add('bg-red-100', 'text-red-700', 'border-red-300');
+        } else if (type === 'loading') {
+            formStatus.classList.add('bg-blue-100', 'text-blue-700', 'border-blue-300');
+        }
+        
+        // Show the status
+        formStatus.classList.remove('opacity-0', 'translate-y-2');
         
         // Auto-hide success/error messages after 5 seconds
         if (type !== 'loading') {
             setTimeout(() => {
-                formStatus.style.opacity = '0';
+                formStatus.classList.add('opacity-0', 'translate-y-2');
                 setTimeout(() => {
-                    formStatus.className = 'form-status';
+                    formStatus.classList.add('hidden');
                 }, 300);
             }, 5000);
         }
