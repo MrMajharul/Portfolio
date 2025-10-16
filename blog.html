@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Majharul Islam's Blog - Technical articles, tutorials, and insights on web development, programming, and computer science.">
+    <meta name="keywords" content="Blog, Web Development, Programming, Computer Science, Tutorials, Tech Articles">
+    <meta name="author" content="Majharul Islam">
+    
+    <title>Blog - Majharul Islam</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Styles -->
+    <link rel="stylesheet" href="tailwind-custom.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                        accent: '#f093fb',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary hover:text-secondary transition-colors duration-300">
+                Majharul Islam
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="index.html#home" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Home</a></li>
+                <li><a href="index.html#about" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">About</a></li>
+                <li><a href="index.html#skills" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Skills</a></li>
+                <li><a href="index.html#projects" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Projects</a></li>
+                <li><a href="blog.html" class="text-primary font-semibold transition-colors duration-300">Blog</a></li>
+                <li><a href="index.html#contact" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Contact</a></li>
+                <li><a href="cv.html" target="_blank" class="inline-flex items-center px-5 py-2 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-full hover:shadow-lg transition-all duration-300 text-sm">
+                    <i class="fas fa-file-pdf mr-2"></i>
+                    Download CV
+                </a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden mobile-menu cursor-pointer">
+                <div class="w-6 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                <div class="w-6 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                <div class="w-6 h-0.5 bg-gray-700 transition-all duration-300"></div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="nav-links md:hidden bg-white border-t hidden">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html#home" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">Home</a>
+                <a href="index.html#about" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">About</a>
+                <a href="index.html#skills" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
+                <a href="index.html#projects" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="blog.html" class="block py-2 text-primary font-semibold transition-colors duration-300">Blog</a>
+                <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                <a href="cv.html" target="_blank" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">
+                    <i class="fas fa-file-pdf mr-2"></i>Download CV
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 animate-slide-up">
+                    <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Blog</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Thoughts, tutorials, and insights on web development, programming, and computer science
+                </p>
+                
+                <!-- Categories Filter -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <button class="px-5 py-2 bg-primary text-white rounded-full font-medium hover:shadow-lg transition-all duration-300">
+                        All Posts
+                    </button>
+                    <button class="px-5 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-gray-100 transition-all duration-300 border border-gray-200">
+                        Tutorials
+                    </button>
+                    <button class="px-5 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-gray-100 transition-all duration-300 border border-gray-200">
+                        Web Development
+                    </button>
+                    <button class="px-5 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-gray-100 transition-all duration-300 border border-gray-200">
+                        Algorithms
+                    </button>
+                    <button class="px-5 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-gray-100 transition-all duration-300 border border-gray-200">
+                        Career
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 fade-in overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-blog text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-semibold text-primary">
+                            Tutorial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>October 15, 2025</span>
+                            <span class="mx-2">•</span>
+                            <i class="far fa-clock mr-2"></i>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                            Getting Started with React Hooks
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">React</span>
+                            <span class="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium">JavaScript</span>
+                            <span class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-medium">Web Dev</span>
+                        </div>
+                        
+                        <!-- Preview Content -->
+                        <div class="blog-preview">
+                            <p class="text-gray-600 mb-4">
+                                React Hooks revolutionized the way we write React components by allowing us to use state and other React features without writing a class. In this comprehensive guide, I'll walk you through the most essential hooks and how to use them effectively.
+                            </p>
+                        </div>
+                        
+                        <!-- Full Blog Content (Hidden by default) -->
+                        <div class="blog-full-content hidden">
+                            <div class="prose prose-sm max-w-none text-gray-600">
+                                <p class="mb-4">
+                                    React Hooks revolutionized the way we write React components by allowing us to use state and other React features without writing a class. In this comprehensive guide, I'll walk you through the most essential hooks and how to use them effectively.
+                                </p>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Understanding useState</h4>
+                                <p class="mb-4">
+                                    The useState hook is your gateway to managing state in functional components. Here's a simple example:
+                                </p>
+                                <pre class="bg-gray-50 p-4 rounded-lg mb-4 overflow-x-auto"><code>const [count, setCount] = useState(0);
+
+function increment() {
+  setCount(count + 1);
+}</code></pre>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Working with useEffect</h4>
+                                <p class="mb-4">
+                                    useEffect lets you perform side effects in function components. It's perfect for data fetching, subscriptions, or manually changing the DOM.
+                                </p>
+                                <pre class="bg-gray-50 p-4 rounded-lg mb-4 overflow-x-auto"><code>useEffect(() => {
+  document.title = `Count: ${count}`;
+}, [count]);</code></pre>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Custom Hooks</h4>
+                                <p class="mb-4">
+                                    Custom hooks allow you to extract component logic into reusable functions. They follow the same rules as built-in hooks and must start with "use".
+                                </p>
+                                
+                                <p class="mt-4 font-semibold text-primary">
+                                    Master these fundamental hooks, and you'll be well on your way to writing cleaner, more maintainable React code!
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Read More Button -->
+                        <button class="read-more-btn inline-flex items-center text-primary hover:text-secondary transition-colors duration-300 font-medium mt-4">
+                            <span class="btn-text">Read More</span>
+                            <i class="fas fa-chevron-down ml-2 text-sm transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                                <!-- Blog Post 2 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 fade-in animation-delay-200 overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-code text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-semibold text-green-600">
+                            Web Development
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>October 10, 2025</span>
+                            <span class="mx-2">•</span>
+                            <i class="far fa-clock mr-2"></i>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                            Building RESTful APIs with Node.js
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-medium">Node.js</span>
+                            <span class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-medium">Express</span>
+                            <span class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs font-medium">Backend</span>
+                        </div>
+                        
+                        <!-- Preview Content -->
+                        <div class="blog-preview">
+                            <p class="text-gray-600 mb-4">
+                                Building a RESTful API is a fundamental skill for backend developers. In this guide, I'll show you how to create a production-ready REST API using Node.js and Express framework.
+                            </p>
+                        </div>
+                        
+                        <!-- Full Blog Content (Hidden by default) -->
+                        <div class="blog-full-content hidden">
+                            <div class="prose prose-sm max-w-none text-gray-600">
+                                <p class="mb-4">
+                                    Building a RESTful API is a fundamental skill for backend developers. In this guide, I'll show you how to create a production-ready REST API using Node.js and Express framework.
+                                </p>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Setting Up Your Project</h4>
+                                <p class="mb-4">
+                                    First, initialize your Node.js project and install the necessary dependencies:
+                                </p>
+                                <pre class="bg-gray-50 p-4 rounded-lg mb-4 overflow-x-auto"><code>npm init -y
+npm install express cors dotenv mongoose</code></pre>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Creating Your First Route</h4>
+                                <p class="mb-4">
+                                    Here's how to set up a basic Express server with routing:
+                                </p>
+                                <pre class="bg-gray-50 p-4 rounded-lg mb-4 overflow-x-auto"><code>const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+app.get('/api/users', (req, res) => {
+  res.json({ message: 'Get all users' });
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});</code></pre>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Best Practices</h4>
+                                <ul class="list-disc pl-6 mb-4 space-y-2">
+                                    <li>Use proper HTTP methods (GET, POST, PUT, DELETE)</li>
+                                    <li>Implement middleware for authentication and validation</li>
+                                    <li>Handle errors gracefully with try-catch blocks</li>
+                                    <li>Use environment variables for configuration</li>
+                                    <li>Implement rate limiting to prevent abuse</li>
+                                </ul>
+                                
+                                <p class="mt-4 font-semibold text-green-600">
+                                    With these fundamentals, you're ready to build scalable and maintainable REST APIs!
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Read More Button -->
+                        <button class="read-more-btn inline-flex items-center text-green-600 hover:text-green-700 transition-colors duration-300 font-medium mt-4">
+                            <span class="btn-text">Read More</span>
+                            <i class="fas fa-chevron-down ml-2 text-sm transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                                <!-- Blog Post 3 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 fade-in animation-delay-400 overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-database text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-semibold text-orange-600">
+                            Tutorial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>October 5, 2025</span>
+                            <span class="mx-2">•</span>
+                            <i class="far fa-clock mr-2"></i>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                            MongoDB vs MySQL: Which to Choose?
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-medium">MongoDB</span>
+                            <span class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
+                            <span class="inline-block bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-medium">Database</span>
+                        </div>
+                        
+                        <!-- Preview Content -->
+                        <div class="blog-preview">
+                            <p class="text-gray-600 mb-4">
+                                Choosing the right database is crucial for your application's success. Let me break down the key differences between MongoDB and MySQL to help you make an informed decision.
+                            </p>
+                        </div>
+                        
+                        <!-- Full Blog Content (Hidden by default) -->
+                        <div class="blog-full-content hidden">
+                            <div class="prose prose-sm max-w-none text-gray-600">
+                                <p class="mb-4">
+                                    Choosing the right database is crucial for your application's success. Let me break down the key differences between MongoDB and MySQL to help you make an informed decision.
+                                </p>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">MongoDB: The NoSQL Champion</h4>
+                                <p class="mb-4">
+                                    MongoDB is a document-oriented NoSQL database that stores data in flexible, JSON-like documents. It's perfect for:
+                                </p>
+                                <ul class="list-disc pl-6 mb-4 space-y-2">
+                                    <li><strong>Flexible Schema:</strong> Great when your data structure evolves frequently</li>
+                                    <li><strong>Horizontal Scaling:</strong> Easy to distribute data across multiple servers</li>
+                                    <li><strong>Complex Data:</strong> Handles nested objects and arrays naturally</li>
+                                    <li><strong>Rapid Development:</strong> Schema-less nature speeds up prototyping</li>
+                                </ul>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">MySQL: The Relational Powerhouse</h4>
+                                <p class="mb-4">
+                                    MySQL is a mature relational database that uses structured tables. It excels at:
+                                </p>
+                                <ul class="list-disc pl-6 mb-4 space-y-2">
+                                    <li><strong>ACID Compliance:</strong> Ensures data consistency and reliability</li>
+                                    <li><strong>Complex Queries:</strong> Powerful JOIN operations for related data</li>
+                                    <li><strong>Data Integrity:</strong> Foreign keys and constraints prevent invalid data</li>
+                                    <li><strong>Mature Ecosystem:</strong> Extensive tools and community support</li>
+                                </ul>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">The Verdict</h4>
+                                <p class="mb-4">
+                                    <strong>Choose MongoDB</strong> for applications with evolving schemas, hierarchical data, or when you need horizontal scalability. Think social media apps, content management systems, or IoT data.
+                                </p>
+                                <p class="mb-4">
+                                    <strong>Choose MySQL</strong> for applications requiring complex queries, strict data consistency, or financial transactions. Perfect for e-commerce, banking systems, or traditional business applications.
+                                </p>
+                                
+                                <p class="mt-4 font-semibold text-orange-600">
+                                    Remember: The best database depends on your specific use case. Sometimes, you might even use both!
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Read More Button -->
+                        <button class="read-more-btn inline-flex items-center text-orange-600 hover:text-orange-700 transition-colors duration-300 font-medium mt-4">
+                            <span class="btn-text">Read More</span>
+                            <i class="fas fa-chevron-down ml-2 text-sm transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                                <!-- Blog Post 4 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 fade-in overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-pink-500 to-purple-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-paint-brush text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-semibold text-pink-600">
+                            Web Development
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>September 28, 2025</span>
+                            <span class="mx-2">•</span>
+                            <i class="far fa-clock mr-2"></i>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                            Mastering Tailwind CSS Utilities
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-block bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-xs font-medium">Tailwind</span>
+                            <span class="inline-block bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-medium">CSS</span>
+                            <span class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs font-medium">Design</span>
+                        </div>
+                        
+                        <!-- Preview Content -->
+                        <div class="blog-preview">
+                            <p class="text-gray-600 mb-4">
+                                Tailwind CSS has transformed how I build user interfaces. Instead of writing custom CSS, I compose designs using utility classes directly in my HTML. Let me show you why this approach is so powerful.
+                            </p>
+                        </div>
+                        
+                        <!-- Full Blog Content (Hidden by default) -->
+                        <div class="blog-full-content hidden">
+                            <div class="prose prose-sm max-w-none text-gray-600">
+                                <p class="mb-4">
+                                    Tailwind CSS has transformed how I build user interfaces. Instead of writing custom CSS, I compose designs using utility classes directly in my HTML. Let me show you why this approach is so powerful.
+                                </p>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Why Tailwind CSS?</h4>
+                                <p class="mb-4">
+                                    Traditional CSS can become hard to maintain as projects grow. Tailwind solves this with a utility-first approach:
+                                </p>
+                                <ul class="list-disc pl-6 mb-4 space-y-2">
+                                    <li>No more naming headaches - no need to invent class names</li>
+                                    <li>Everything is in one place - HTML and styling together</li>
+                                    <li>Smaller CSS files - Tailwind purges unused styles</li>
+                                    <li>Faster development - build UIs without context switching</li>
+                                </ul>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Essential Utilities</h4>
+                                <p class="mb-4">Here are the most useful Tailwind utilities I use daily:</p>
+                                
+                                <pre class="bg-gray-50 p-4 rounded-lg mb-4 overflow-x-auto"><code>&lt;!-- Flexbox Layout --&gt;
+&lt;div class="flex items-center justify-between"&gt;
+  &lt;!-- Content --&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive Design --&gt;
+&lt;div class="text-sm md:text-base lg:text-lg"&gt;
+  Responsive text
+&lt;/div&gt;
+
+&lt;!-- Hover Effects --&gt;
+&lt;button class="bg-blue-500 hover:bg-blue-700 transition"&gt;
+  Click me
+&lt;/button&gt;</code></pre>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Pro Tips</h4>
+                                <ul class="list-disc pl-6 mb-4 space-y-2">
+                                    <li><strong>Use @apply sparingly:</strong> Only for repeated patterns</li>
+                                    <li><strong>Embrace the utility-first mindset:</strong> It feels weird at first but becomes natural</li>
+                                    <li><strong>Configure your theme:</strong> Customize colors and spacing to match your brand</li>
+                                    <li><strong>Install the VS Code extension:</strong> Get autocomplete and class sorting</li>
+                                </ul>
+                                
+                                <p class="mt-4 font-semibold text-pink-600">
+                                    Once you go Tailwind, you never go back. It's that good!
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Read More Button -->
+                        <button class="read-more-btn inline-flex items-center text-pink-600 hover:text-pink-700 transition-colors duration-300 font-medium mt-4">
+                            <span class="btn-text">Read More</span>
+                            <i class="fas fa-chevron-down ml-2 text-sm transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 fade-in overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-brain text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-semibold text-blue-600">
+                            Algorithm
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>September 20, 2025</span>
+                            <span class="mx-2">•</span>
+                            <i class="far fa-clock mr-2"></i>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                            Understanding Binary Search Trees
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-medium">DSA</span>
+                            <span class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-medium">Algorithms</span>
+                            <span class="inline-block bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-xs font-medium">Java</span>
+                        </div>
+                        
+                        <!-- Preview Content -->
+                        <div class="blog-preview">
+                            <p class="text-gray-600 mb-4">
+                                Binary Search Trees (BST) are fundamental data structures that every computer science student must master. They're not just academic concepts - they power everything from database indexes to file systems.
+                            </p>
+                        </div>
+                        
+                        <!-- Full Blog Content (Hidden by default) -->
+                        <div class="blog-full-content hidden">
+                            <div class="prose prose-sm max-w-none text-gray-600">
+                                <p class="mb-4">
+                                    Binary Search Trees (BST) are fundamental data structures that every computer science student must master. They're not just academic concepts - they power everything from database indexes to file systems.
+                                </p>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">What is a BST?</h4>
+                                <p class="mb-4">
+                                    A Binary Search Tree is a node-based data structure where each node has at most two children. The key property is:
+                                </p>
+                                <ul class="list-disc pl-6 mb-4 space-y-2">
+                                    <li>Left subtree contains only nodes with keys less than the parent node</li>
+                                    <li>Right subtree contains only nodes with keys greater than the parent node</li>
+                                    <li>Both left and right subtrees must also be binary search trees</li>
+                                </ul>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Basic Operations</h4>
+                                <p class="mb-4"><strong>1. Insertion:</strong> O(h) time complexity where h is height</p>
+                                <pre class="bg-gray-50 p-4 rounded-lg mb-4 overflow-x-auto"><code>class Node {
+    int value;
+    Node left, right;
+    
+    Node(int value) {
+        this.value = value;
+        left = right = null;
+    }
+}
+
+Node insert(Node root, int value) {
+    if (root == null) return new Node(value);
+    
+    if (value < root.value) {
+        root.left = insert(root.left, value);
+    } else {
+        root.right = insert(root.right, value);
+    }
+    return root;
+}</code></pre>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Tree Traversals</h4>
+                                <ul class="list-disc pl-6 mb-4 space-y-2">
+                                    <li><strong>In-order:</strong> Left → Root → Right (gives sorted order)</li>
+                                    <li><strong>Pre-order:</strong> Root → Left → Right</li>
+                                    <li><strong>Post-order:</strong> Left → Right → Root</li>
+                                </ul>
+                                
+                                <pre class="bg-gray-50 p-4 rounded-lg mb-4 overflow-x-auto"><code>void inorder(Node root) {
+    if (root != null) {
+        inorder(root.left);
+        System.out.print(root.value + " ");
+        inorder(root.right);
+    }
+}</code></pre>
+                                
+                                <p class="mt-4 font-semibold text-blue-600">
+                                    Master BSTs and you'll ace data structure interviews! Practice these operations until they become second nature.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Read More Button -->
+                        <button class="read-more-btn inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 font-medium mt-4">
+                            <span class="btn-text">Read More</span>
+                            <i class="fas fa-chevron-down ml-2 text-sm transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 fade-in overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-purple-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-rocket text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-semibold text-indigo-600">
+                            Career
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>September 15, 2025</span>
+                            <span class="mx-2">•</span>
+                            <i class="far fa-clock mr-2"></i>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                            My Journey as a CS Student
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-block bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs font-medium">Personal</span>
+                            <span class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs font-medium">Education</span>
+                            <span class="inline-block bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-medium">Career</span>
+                        </div>
+                        
+                        <!-- Preview Content -->
+                        <div class="blog-preview">
+                            <p class="text-gray-600 mb-4">
+                                As I reflect on my time at Green University of Bangladesh, I'm filled with gratitude for the experiences that shaped me — the challenges, breakthroughs, late nights, and moments of doubt that eventually turned into growth. My journey through Computer Science has been far from easy, but every step has brought me closer to the developer I am today.
+                            </p>
+                        </div>
+                        
+                        <!-- Full Blog Content (Hidden by default) -->
+                        <div class="blog-full-content hidden">
+                            <div class="prose prose-sm max-w-none text-gray-600">
+                                <p class="mb-4">
+                                    As I reflect on my time at Green University of Bangladesh, I'm filled with gratitude for the experiences that shaped me — the challenges, breakthroughs, late nights, and moments of doubt that eventually turned into growth. My journey through Computer Science has been far from easy, but every step has brought me closer to the developer I am today.
+                                </p>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">The Beginning</h4>
+                                <p class="mb-4">
+                                    When I first enrolled in the Computer Science program, everything felt overwhelming. Programming was like learning a new language — intimidating, confusing, and frustrating. There were moments I questioned if I was cut out for it. But I soon realized something important: persistence beats talent. You don't have to be a genius to succeed in tech — you just have to keep going.
+                                </p>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Lessons That Made the Difference</h4>
+                                
+                                <p class="mb-3"><strong>1. Build Real Projects</strong></p>
+                                <p class="mb-4">
+                                    Learning theory is important, but nothing compares to hands-on experience. Every project I built — no matter how small — taught me something new. From debugging simple code to developing full applications, I gained confidence through building.
+                                </p>
+                                
+                                <p class="mb-3"><strong>2. Failure Is a Teacher</strong></p>
+                                <p class="mb-4">
+                                    I've had my fair share of bugs, broken code, and projects that didn't work out. But I've learned to see failure differently — as feedback, not defeat. Every mistake brought me closer to mastering the craft.
+                                </p>
+                                
+                                <p class="mb-3"><strong>3. Find Your Community</strong></p>
+                                <p class="mb-4">
+                                    Joining coding groups, forums, and attending hackathons opened up a world of opportunities. I met people who inspired me, challenged me, and helped me grow. Don't underestimate the power of community in tech — collaboration is where the magic happens.
+                                </p>
+                                
+                                <p class="mb-3"><strong>4. Stay Curious</strong></p>
+                                <p class="mb-4">
+                                    Tech moves fast. The moment you stop learning, you start falling behind. Stay curious. Explore new tools, read docs, ask questions, and never settle for "just enough."
+                                </p>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Advice for New Students</h4>
+                                <p class="mb-4">
+                                    If you're just starting your CS journey, here's what I wish I knew from day one:
+                                </p>
+                                
+                                <ul class="list-disc pl-6 mb-4 space-y-2">
+                                    <li><strong>Start small</strong> – Don't try to learn everything at once. Focus on the basics and build from there.</li>
+                                    <li><strong>Be consistent</strong> – A little progress every day adds up. Keep coding, even when it's hard.</li>
+                                    <li><strong>Avoid comparison</strong> – Everyone's journey is different. Celebrate your own milestones.</li>
+                                    <li><strong>Master the fundamentals</strong> – Fancy frameworks are great, but a solid foundation is essential.</li>
+                                    <li><strong>Remember your "why"</strong> – On those late nights when your code won't compile and nothing makes sense, remind yourself why you started. Your passion will carry you through.</li>
+                                </ul>
+                                
+                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Final Thoughts</h4>
+                                <p class="mb-4">
+                                    The road to becoming a developer is challenging — full of ups and downs — but it's also one of the most rewarding paths you can take. Embrace the grind, keep learning, and trust the process.
+                                </p>
+                                <p class="mb-4">
+                                    You don't have to be the best coder in the room. Just be the one who never gives up.
+                                </p>
+                                
+                                <p class="mt-4 font-semibold text-indigo-600">
+                                    Keep coding. Keep growing. And never stop believing in yourself.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Read More Button -->
+                        <button class="read-more-btn inline-flex items-center text-indigo-600 hover:text-indigo-700 transition-colors duration-300 font-medium mt-4">
+                            <span class="btn-text">Read More</span>
+                            <i class="fas fa-chevron-down ml-2 text-sm transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center space-x-2 mt-12">
+                <button class="px-4 py-2 bg-gray-100 text-gray-400 rounded-lg cursor-not-allowed" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="px-4 py-2 bg-primary text-white rounded-lg font-medium">1</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-300">2</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-300">3</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-300">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-br from-primary to-secondary">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i class="fas fa-envelope-open-text text-5xl text-white mb-6"></i>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Subscribe to My Newsletter</h2>
+            <p class="text-white/90 mb-8 text-lg">
+                Get the latest blog posts and updates delivered straight to your inbox
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="flex-1 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-white"
+                    required
+                >
+                <button 
+                    type="submit" 
+                    class="px-8 py-4 bg-white text-primary font-semibold rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    Subscribe
+                </button>
+            </form>
+            <p class="text-white/70 text-sm mt-4">No spam. Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Majharul Islam</h3>
+                    <p class="text-gray-400 mb-2">Computer Science & Engineering Student</p>
+                    <p class="text-gray-500 text-sm mb-6">Green University of Bangladesh</p>
+                    
+                    <div class="flex justify-center space-x-6 mb-8">
+                        <a href="https://github.com/MrMajharul" target="_blank" 
+                           class="w-12 h-12 bg-gray-800 hover:bg-primary text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                           aria-label="GitHub Profile">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/majharul-islam-68945326b/" target="_blank" 
+                           class="w-12 h-12 bg-gray-800 hover:bg-blue-600 text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                           aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="mailto:majharul.cs@gmail.com" 
+                           class="w-12 h-12 bg-gray-800 hover:bg-red-500 text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                           aria-label="Email Me">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Links 
+                    <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm">
+                        <a href="index.html#home" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                        <a href="index.html#about" class="text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                        <a href="index.html#skills" class="text-gray-400 hover:text-white transition-colors duration-300">Skills</a>
+                        <a href="index.html#projects" class="text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
+                        <a href="blog.html" class="text-white font-semibold transition-colors duration-300">Blog</a>
+                        <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
+                        <a href="cv.html" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">CV</a>
+                    </div> -->
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400">&copy; 2025 Majharul Islam. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-primary to-secondary text-white rounded-full shadow-2xl opacity-0 invisible transition-all duration-300 hover:scale-110 z-40 flex items-center justify-center group"
+            aria-label="Back to top">
+        <i class="fas fa-arrow-up group-hover:animate-bounce"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

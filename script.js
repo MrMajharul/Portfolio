@@ -497,3 +497,41 @@ window.addEventListener('load', () => {
     const loadTime = performance.now();
     console.log(`%c⚡ Page loaded in ${Math.round(loadTime)}ms`, 'color: #10b981; font-size: 12px; font-weight: bold;');
 });
+
+// Blog Read More/Less functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const article = this.closest('article');
+            const preview = article.querySelector('.blog-preview');
+            const fullContent = article.querySelector('.blog-full-content');
+            const btnText = this.querySelector('.btn-text');
+            const icon = this.querySelector('i');
+            
+            // Toggle content visibility
+            if (fullContent.classList.contains('hidden')) {
+                // Show full content
+                preview.classList.add('hidden');
+                fullContent.classList.remove('hidden');
+                btnText.textContent = 'Read Less';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+                
+                // Smooth scroll to article
+                article.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                // Show preview
+                fullContent.classList.add('hidden');
+                preview.classList.remove('hidden');
+                btnText.textContent = 'Read More';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+                
+                // Scroll to top of article
+                article.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    });
+});
