@@ -300,3 +300,298 @@ a, button {
 @media (prefers-color-scheme: dark) {
     /* Add dark mode styles here when implementing */
 }
+
+/* Blog Full Page View Styles */
+.full-page-view {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    margin: 0 !important;
+    z-index: 9999;
+    background: white;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    animation: slideInFromBottom 0.4s ease-out;
+    -webkit-overflow-scrolling: touch;
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.full-page-view .p-6 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6rem 3rem 4rem 3rem !important;
+    background: white;
+    min-height: 100vh;
+}
+
+.full-page-view .blog-full-content {
+    padding: 2rem 0;
+    line-height: 1.8;
+}
+
+.full-page-view h3 {
+    font-size: 3.5rem !important;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.full-page-view .blog-full-content h4 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #e5e7eb;
+}
+
+.full-page-view .blog-full-content p {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    line-height: 1.9;
+}
+
+.full-page-view .blog-full-content ul {
+    margin-bottom: 1.5rem;
+}
+
+.full-page-view .blog-full-content li {
+    font-size: 1.0625rem;
+    color: #4b5563;
+    margin-bottom: 0.875rem;
+    line-height: 1.8;
+}
+
+.full-page-view .blog-full-content pre {
+    background: #f9fafb;
+    border-left: 4px solid #667eea;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.full-page-view .blog-full-content code {
+    font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #374151;
+}
+
+.full-page-view .blog-full-content strong {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.full-page-view .h-48,
+.full-page-view .h-52 {
+    display: none !important;
+}
+
+.full-page-view .flex.flex-wrap.gap-2 {
+    margin-bottom: 2rem;
+}
+
+.full-page-view .flex.flex-wrap.gap-2 span {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.full-page-view .flex.items-center.text-sm {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #6b7280;
+}
+
+/* Back button styling for full screen */
+.back-to-blog-btn {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    z-index: 10000;
+    cursor: pointer;
+}
+
+.back-to-blog-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.back-to-blog-btn i {
+    transition: transform 0.3s ease;
+    font-size: 1rem;
+}
+
+.back-to-blog-btn:hover i {
+    transform: translateX(-5px);
+}
+
+/* Blog posts grid container */
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Enhanced blog card hover effects */
+.blog-posts-grid article {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-posts-grid article:hover {
+    transform: translateY(-8px);
+}
+
+/* Read More button styling */
+.read-more-btn {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.read-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.read-more-btn:hover::before {
+    left: 100%;
+}
+
+.read-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* Blog category badges */
+.blog-posts-grid article .inline-block {
+    transition: all 0.2s ease;
+}
+
+.blog-posts-grid article .inline-block:hover {
+    transform: scale(1.05);
+}
+
+/* Professional typography for blog content */
+.blog-full-content .prose {
+    max-width: none;
+}
+
+/* Date and read time styling */
+.blog-posts-grid .text-sm.text-gray-500 {
+    font-weight: 500;
+}
+
+/* Featured image gradient overlays */
+.blog-posts-grid article .h-48,
+.blog-posts-grid article .h-52 {
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-posts-grid article .h-48::after,
+.blog-posts-grid article .h-52::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog-posts-grid article:hover .h-48::after,
+.blog-posts-grid article:hover .h-52::after {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .full-page-view .p-6 {
+        padding: 5rem 2rem 3rem 2rem !important;
+    }
+    
+    .full-page-view h3 {
+        font-size: 2.5rem !important;
+    }
+    
+    .back-to-blog-btn {
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .full-page-view .p-6 {
+        padding: 5rem 1.5rem 2rem 1.5rem !important;
+    }
+    
+    .full-page-view h3 {
+        font-size: 2rem !important;
+    }
+    
+    .full-page-view .blog-full-content h4 {
+        font-size: 1.375rem;
+    }
+    
+    .full-page-view .blog-full-content p,
+    .full-page-view .blog-full-content li {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .back-to-blog-btn {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+}

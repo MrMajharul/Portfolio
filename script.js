@@ -498,40 +498,157 @@ window.addEventListener('load', () => {
     console.log(`%c⚡ Page loaded in ${Math.round(loadTime)}ms`, 'color: #10b981; font-size: 12px; font-weight: bold;');
 });
 
-// Blog Read More/Less functionality
+// Blog Read More functionality - Full screen view
 document.addEventListener('DOMContentLoaded', () => {
     const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    const blogSection = document.querySelector('.py-20.bg-gradient-to-b');
     
     readMoreButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
             const article = this.closest('article');
+            const blogGrid = document.querySelector('.blog-posts-grid');
+            const blogHero = document.querySelector('.blog-hero-section');
+            const blogPagination = document.querySelector('.blog-pagination');
+            const blogNewsletter = document.querySelector('.blog-newsletter');
+            const navbar = document.querySelector('nav');
+            const blogSectionContainer = blogGrid ? blogGrid.closest('section') : null;
+            
+            // Hide navigation and other sections
+            if (navbar) navbar.style.display = 'none';
+            if (blogHero) blogHero.style.display = 'none';
+            if (blogPagination) blogPagination.style.display = 'none';
+            if (blogNewsletter) blogNewsletter.style.display = 'none';
+            
+            // Hide all articles EXCEPT the current one
+            document.querySelectorAll('.blog-posts-grid article').forEach(a => {
+                if (a !== article) {
+                    a.style.display = 'none';
+                }
+            });
+            
+            // Remove grid layout from container
+            if (blogGrid) {
+                blogGrid.style.display = 'block';
+                blogGrid.style.gridTemplateColumns = 'none';
+            }
+            
+            // Show current article in full screen view
+            article.style.display = 'block';
+            article.classList.add('full-page-view');
+            
+            // Hide preview, show full content
             const preview = article.querySelector('.blog-preview');
             const fullContent = article.querySelector('.blog-full-content');
-            const btnText = this.querySelector('.btn-text');
-            const icon = this.querySelector('i');
+            const readMoreBtn = article.querySelector('.read-more-btn');
             
-            // Toggle content visibility
-            if (fullContent.classList.contains('hidden')) {
-                // Show full content
-                preview.classList.add('hidden');
-                fullContent.classList.remove('hidden');
-                btnText.textContent = 'Read Less';
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
+            if (preview) preview.style.display = 'none';
+            if (fullContent) fullContent.classList.remove('hidden');
+            if (readMoreBtn) readMoreBtn.style.display = 'none';
+            
+            // Create and show back button if it doesn't exist
+            let backButton = document.querySelector('.back-to-blog-btn');
+            if (!backButton) {
+                backButton = document.createElement('button');
+                backButton.className = 'back-to-blog-btn';
+                backButton.innerHTML = '<i class="fas fa-arrow-left mr-2"></i> Back to All Posts';
                 
-                // Smooth scroll to article
-                article.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            } else {
-                // Show preview
-                fullContent.classList.add('hidden');
-                preview.classList.remove('hidden');
-                btnText.textContent = 'Read More';
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
+                backButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Restore grid layout
+                    if (blogGrid) {
+                        blogGrid.style.display = 'grid';
+                        blogGrid.style.gridTemplateColumns = '';
+                    }
+                    
+                    // Show all elements again
+                    if (navbar) navbar.style.display = 'block';
+                    if (blogHero) blogHero.style.display = 'block';
+                    if (blogPagination) blogPagination.style.display = 'flex';
+                    if (blogNewsletter) blogNewsletter.style.display = 'block';
+                    
+                    // Reset all articles to grid view
+                    document.querySelectorAll('.blog-posts-grid article').forEach(a => {
+                        a.style.display = 'block';
+                        a.classList.remove('full-page-view');
+                        
+                        const articlePreview = a.querySelector('.blog-preview');
+                        const articleFullContent = a.querySelector('.blog-full-content');
+                        const articleReadMoreBtn = a.querySelector('.read-more-btn');
+                        
+                        if (articlePreview) articlePreview.style.display = 'block';
+                        if (articleFullContent) articleFullContent.classList.add('hidden');
+                        if (articleReadMoreBtn) articleReadMoreBtn.style.display = 'inline-flex';
+                    });
+                    
+                    // Remove back button
+                    backButton.remove();
+                    
+                    // Scroll to blog section
+                    if (blogSectionContainer) {
+                        blogSectionContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
                 
-                // Scroll to top of article
-                article.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                // Insert back button as first child of body (fixed position)
+                document.body.appendChild(backButton);
             }
+            
+            backButton.style.display = 'block';
+            
+            // Scroll article to top
+            setTimeout(() => {
+                article.scrollTop = 0;
+            }, 100);
+        });
+    });
+    
+    // Handle ESC key to close full screen view
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const backButton = document.querySelector('.back-to-blog-btn');
+            if (backButton && backButton.style.display === 'block') {
+                backButton.click();
+            }
+        }
+    });
+    
+    // Category Filter Functionality
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const blogPosts = document.querySelectorAll('.blog-post');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const selectedCategory = this.getAttribute('data-category');
+            
+            // Update active button styling
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('active', 'bg-white', 'text-primary', 'shadow-md', 'border-2', 'border-primary');
+                btn.classList.add('bg-white/50', 'backdrop-blur-sm', 'text-gray-700');
+            });
+            
+            this.classList.remove('bg-white/50', 'backdrop-blur-sm', 'text-gray-700');
+            this.classList.add('active', 'bg-white', 'text-primary', 'shadow-md', 'border-2', 'border-primary');
+            
+            // Filter blog posts
+            blogPosts.forEach(post => {
+                const postCategory = post.getAttribute('data-category');
+                
+                if (selectedCategory === 'all' || postCategory === selectedCategory) {
+                    post.style.display = 'block';
+                    // Add fade-in animation
+                    post.style.opacity = '0';
+                    setTimeout(() => {
+                        post.style.opacity = '1';
+                        post.style.transition = 'opacity 0.5s ease-in-out';
+                    }, 10);
+                } else {
+                    post.style.display = 'none';
+                }
+            });
         });
     });
 });
