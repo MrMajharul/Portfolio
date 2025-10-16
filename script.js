@@ -651,4 +651,84 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+    
+    // Pagination Functionality
+    const postsPerPage = 6;
+    let currentPage = 1;
+    
+    function showPage(page) {
+        const allPosts = document.querySelectorAll('.blog-post');
+        const totalPages = Math.ceil(allPosts.length / postsPerPage);
+        
+        // Ensure page is within valid range
+        if (page < 1) page = 1;
+        if (page > totalPages) page = totalPages;
+        
+        currentPage = page;
+        
+        // Hide all posts first
+        allPosts.forEach((post, index) => {
+            const postPage = Math.floor(index / postsPerPage) + 1;
+            if (postPage === currentPage) {
+                post.style.display = 'block';
+                post.style.opacity = '0';
+                setTimeout(() => {
+                    post.style.opacity = '1';
+                    post.style.transition = 'opacity 0.5s ease-in-out';
+                }, index * 50);
+            } else {
+                post.style.display = 'none';
+            }
+        });
+        
+        // Update pagination buttons
+        updatePaginationButtons(totalPages);
+        
+        // Scroll to top of blog section
+        const blogSection = document.querySelector('.blog-posts-grid');
+        if (blogSection) {
+            blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    
+    function updatePaginationButtons(totalPages) {
+        const pagination = document.querySelector('.blog-pagination');
+        if (!pagination) return;
+        
+        // Clear existing buttons
+        pagination.innerHTML = '';
+        
+        // Previous button
+        const prevBtn = document.createElement('button');
+        prevBtn.className = `px-4 py-2 rounded-lg ${currentPage === 1 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-300'}`;
+        prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.addEventListener('click', () => showPage(currentPage - 1));
+        pagination.appendChild(prevBtn);
+        
+        // Page number buttons
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.className = `px-4 py-2 rounded-lg font-medium ${i === currentPage ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-300'}`;
+            pageBtn.textContent = i;
+            pageBtn.addEventListener('click', () => showPage(i));
+            pagination.appendChild(pageBtn);
+        }
+        
+        // Next button
+        const nextBtn = document.createElement('button');
+        nextBtn.className = `px-4 py-2 rounded-lg ${currentPage === totalPages ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-300'}`;
+        nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.addEventListener('click', () => showPage(currentPage + 1));
+        pagination.appendChild(nextBtn);
+    }
+    
+    // Initialize pagination on page load
+    const allPosts = document.querySelectorAll('.blog-post');
+    if (allPosts.length > 0) {
+        const totalPages = Math.ceil(allPosts.length / postsPerPage);
+        updatePaginationButtons(totalPages);
+        showPage(1);
+    }
 });
