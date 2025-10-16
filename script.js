@@ -53,9 +53,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background on scroll
+// Navbar background on scroll & Back to Top button
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('nav');
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    // Navbar styling
     if (window.scrollY > 100) {
         navbar?.classList.add('bg-white/98', 'shadow-xl');
         navbar?.classList.remove('bg-white/95');
@@ -63,6 +66,23 @@ window.addEventListener('scroll', () => {
         navbar?.classList.remove('bg-white/98', 'shadow-xl');
         navbar?.classList.add('bg-white/95');
     }
+    
+    // Back to top button visibility
+    if (window.scrollY > 300) {
+        backToTopBtn?.classList.remove('opacity-0', 'invisible');
+        backToTopBtn?.classList.add('opacity-100', 'visible');
+    } else {
+        backToTopBtn?.classList.add('opacity-0', 'invisible');
+        backToTopBtn?.classList.remove('opacity-100', 'visible');
+    }
+});
+
+// Back to Top button functionality
+document.getElementById('back-to-top')?.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 // Fade in animation on scroll
@@ -176,10 +196,49 @@ document.querySelectorAll('section').forEach(section => {
     sectionObserver.observe(section);
 });
 
-// Add loading animation
+// Page Preloader
 window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                document.body.classList.add('loaded');
+            }, 500);
+        }, 800); // Show preloader for at least 800ms
+    }
 });
+
+// Form Validation Helper
+function validateForm(formData) {
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    
+    const errors = [];
+    
+    if (name.length < 2) {
+        errors.push('Name must be at least 2 characters long');
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        errors.push('Please enter a valid email address');
+    }
+    
+    if (subject.length < 5) {
+        errors.push('Subject must be at least 5 characters long');
+    }
+    
+    if (message.length < 10) {
+        errors.push('Message must be at least 10 characters long');
+    }
+    
+    return errors;
+}
 
 // Contact Form Functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -192,6 +251,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const formStatus = document.getElementById('form-status');
 
     if (contactForm) {
+        // Real-time validation feedback
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.classList.add('border-red-300');
+                    this.classList.remove('border-green-300');
+                } else {
+                    this.classList.remove('border-red-300');
+                    this.classList.add('border-green-300');
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.classList.remove('border-red-300');
+                }
+            });
+        });
+        
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -201,6 +280,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = formData.get('email');
             const subject = formData.get('subject');
             const message = formData.get('message');
+            
+            // Validate form
+            const errors = validateForm(formData);
+            if (errors.length > 0) {
+                showStatus(errors.join('. '), 'error');
+                return;
+            }
 
             // Show loading state
             setLoadingState(true);
@@ -363,14 +449,51 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
-// Console welcome message
-console.log(`
-🚀 Welcome to Majharul Islam's Portfolio
-👨‍💻 Computer Science & Engineering Student
-📧 Contact: majharul.cs@gmail.com
-🌐 GitHub: https://github.com/MrMajharul
+// Skill bars animation on scroll
+const animateSkillBars = () => {
+    const skillBars = document.querySelectorAll('.bg-gradient-to-r');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.transition = 'width 1.5s ease-out';
+            }
+        });
+    }, { threshold: 0.5 });
 
-💡 Contact form is functional! 
-📝 For demo purposes, submissions are saved locally.
-🔍 Run viewSubmissions() in console to see saved messages.
-`);
+    skillBars.forEach(bar => {
+        if (bar.parentElement?.parentElement?.parentElement?.querySelector('h3')?.textContent.includes('Programming') ||
+            bar.parentElement?.parentElement?.parentElement?.querySelector('h3')?.textContent.includes('Frameworks') ||
+            bar.parentElement?.parentElement?.parentElement?.querySelector('h3')?.textContent.includes('Languages')) {
+            observer.observe(bar);
+        }
+    });
+};
+
+// Initialize skill bars animation
+document.addEventListener('DOMContentLoaded', animateSkillBars);
+
+// Add hover effect to project cards
+document.querySelectorAll('.group').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-12px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});
+
+// Console welcome message with better styling
+console.log('%c🚀 Welcome to Majharul Islam\'s Portfolio', 'color: #667eea; font-size: 24px; font-weight: bold;');
+console.log('%c👨‍💻 Computer Science & Engineering Student', 'color: #764ba2; font-size: 16px;');
+console.log('%c📧 Contact: majharul.cs@gmail.com', 'color: #10b981; font-size: 14px;');
+console.log('%c🌐 GitHub: https://github.com/MrMajharul', 'color: #3b82f6; font-size: 14px;');
+console.log('%c\n💡 Contact form is functional!', 'color: #f59e0b; font-size: 14px; font-weight: bold;');
+console.log('%c📝 For demo purposes, submissions are saved locally.', 'color: #6b7280; font-size: 12px;');
+console.log('%c🔍 Run viewSubmissions() in console to see saved messages.\n', 'color: #6b7280; font-size: 12px;');
+
+// Performance monitoring
+window.addEventListener('load', () => {
+    const loadTime = performance.now();
+    console.log(`%c⚡ Page loaded in ${Math.round(loadTime)}ms`, 'color: #10b981; font-size: 12px; font-weight: bold;');
+});

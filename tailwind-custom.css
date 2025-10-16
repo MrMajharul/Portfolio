@@ -1,8 +1,12 @@
-/* Custom Tailwind Additions */
+/* Custom Tailwind Additions - Professional Portfolio */
 
 /* Animation delay utilities */
 .animation-delay-200 {
     animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+    animation-delay: 300ms;
 }
 
 .animation-delay-400 {
@@ -19,6 +23,22 @@
 
 .animation-delay-1000 {
     animation-delay: 1000ms;
+}
+
+/* Page Load Animation */
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: pageLoad 0.5s ease-out;
 }
 
 /* Line clamp utilities (for text truncation) */
@@ -92,4 +112,191 @@ html {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Hover effect for cards */
+.group:hover {
+    transform: translateY(-8px);
+}
+
+/* Professional input focus styles */
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Back to top button pulse effect */
+#back-to-top {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    50% {
+        box-shadow: 0 10px 15px -3px rgba(102, 126, 234, 0.4), 0 4px 6px -2px rgba(118, 75, 162, 0.3);
+    }
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* Professional text selection */
+::selection {
+    background-color: rgba(102, 126, 234, 0.2);
+    color: #1f2937;
+}
+
+::-moz-selection {
+    background-color: rgba(102, 126, 234, 0.2);
+    color: #1f2937;
+}
+
+/* Enhanced gradient backgrounds */
+.bg-gradient-professional {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Timeline connector styling */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, #667eea, #764ba2);
+}
+
+/* Skill bar animation */
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+}
+
+.skill-bar {
+    animation: fillBar 1.5s ease-out;
+}
+
+/* Professional hover effects for social icons */
+.social-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon:hover {
+    transform: translateY(-4px) scale(1.1);
+}
+
+/* Enhanced shadow on scroll */
+.shadow-scroll {
+    transition: box-shadow 0.3s ease;
+}
+
+/* Loading spinner */
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spinner 0.6s linear infinite;
+}
+
+/* Fade in from bottom */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Professional border gradients */
+.border-gradient {
+    border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+}
+
+/* Responsive text scaling */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide non-essential elements when printing */
+    nav,
+    #back-to-top,
+    #preloader,
+    .mobile-menu,
+    footer .flex.justify-center {
+        display: none !important;
+    }
+    
+    /* Ensure good print layout */
+    body {
+        background: white;
+        color: black;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+    
+    /* Show links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}
+
+/* Accessibility improvements */
+.focus-visible:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bg-gradient-to-r {
+        background: #667eea !important;
+    }
+    
+    .text-gray-600 {
+        color: #000 !important;
+    }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles here when implementing */
 }
