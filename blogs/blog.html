@@ -138,140 +138,7 @@
             </div>
             
             <div class="blog-posts-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1 - Networking Basics -->
-                <article class="blog-post bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group" data-category="tutorial">
-                    <div class="h-52 bg-gradient-to-br from-cyan-500 to-blue-600 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
-                            <i class="fas fa-network-wired text-7xl text-white opacity-20"></i>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white px-4 py-2 rounded-full text-xs font-bold text-cyan-600 shadow-lg">
-                            <i class="fas fa-graduation-cap mr-1"></i>Tutorial
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-4 font-medium">
-                            <i class="far fa-calendar mr-2 text-primary"></i>
-                            <span>October 18, 2025</span>
-                            <span class="mx-2">•</span>
-                            <i class="far fa-clock mr-2 text-primary"></i>
-                            <span>7 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                            Basics of Networking: Easy Explanation for Beginners
-                        </h3>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="inline-block bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-xs font-medium">Networking</span>
-                            <span class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-medium">Tutorial</span>
-                            <span class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs font-medium">Beginner</span>
-                        </div>
-                        
-                        <!-- Preview Content -->
-                        <div class="blog-preview">
-                            <p class="text-gray-600 mb-4">
-                                Understanding networking fundamentals is essential for anyone in IT or computer science. In this comprehensive guide, I'll break down the core concepts of networking in simple terms—from networks and switches to VLANs, routers, and security with ACLs.
-                            </p>
-                        </div>
-                        
-                        <!-- Full Blog Content (Hidden by default) -->
-                        <div class="blog-full-content hidden">
-                            <div class="prose prose-sm max-w-none text-gray-600">
-                                <p class="mb-4">
-                                    Understanding networking fundamentals is essential for anyone in IT or computer science. In this comprehensive guide, I'll break down the core concepts of networking in simple terms—from networks and switches to VLANs, routers, and security with ACLs.
-                                </p>
-                                
-                                <!-- Network Diagram Image -->
-                                <div class="my-6 rounded-lg overflow-hidden shadow-lg">
-                                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=400&fit=crop" 
-                                         alt="Network Infrastructure Diagram" 
-                                         class="w-full h-auto object-cover">
-                                    <p class="text-sm text-gray-500 text-center py-2 bg-gray-50 italic">Network infrastructure connecting devices and systems</p>
-                                </div>
-                                
-                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">1. What is a Network?</h4>
-                                <p class="mb-4">
-                                    A network connects computers or devices to share data, files, or the internet. Think of it as a highway system for digital information.
-                                </p>
-                                <ul class="list-disc pl-6 mb-4 space-y-2">
-                                    <li><strong>LAN (Local Area Network):</strong> Covers a small area like a home or office. This is what you use when you connect your laptop to your home Wi-Fi.</li>
-                                    <li><strong>WAN (Wide Area Network):</strong> Connects over large areas, like the Internet. It links multiple LANs together across cities or countries.</li>
-                                    <li><strong>MAN (Metropolitan Area Network):</strong> Covers a city or large campus, bridging the gap between LAN and WAN.</li>
-                                </ul>
-                                
-                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">2. Switches – The Connectors</h4>
-                                <p class="mb-4">
-                                    A switch connects many devices inside one network. It helps devices communicate with each other smoothly, like a traffic controller directing data to the right destination.
-                                </p>
-                                <ul class="list-disc pl-6 mb-4 space-y-2">
-                                    <li><strong>Unmanaged:</strong> Plug and play, no setup needed. Perfect for home networks.</li>
-                                    <li><strong>Managed:</strong> More control and settings. Used in enterprise environments for advanced configuration.</li>
-                                    <li><strong>Smart:</strong> Mid-level management features. A balance between unmanaged and fully managed switches.</li>
-                                    <li><strong>Layer 3:</strong> Can also route data between networks, combining switch and router functionality.</li>
-                                </ul>
-                                
-                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">3. VLAN (Virtual LAN)</h4>
-                                <p class="mb-4">
-                                    VLAN divides one physical network into smaller logical groups. It increases security and reduces unnecessary traffic by isolating different departments or functions.
-                                </p>
-                                <ul class="list-disc pl-6 mb-4 space-y-2">
-                                    <li><strong>Default VLAN:</strong> The original built-in network that comes pre-configured on switches.</li>
-                                    <li><strong>Data VLAN:</strong> Created for user or departmental data, allowing you to segment your network logically.</li>
-                                </ul>
-                                
-                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">4. Routers – The Navigators</h4>
-                                <p class="mb-4">
-                                    A router connects different networks together (like your home network to the Internet). It decides the best path for data to travel, ensuring efficient delivery.
-                                </p>
-                                <ul class="list-disc pl-6 mb-4 space-y-2">
-                                    <li><strong>Static Routing:</strong> Manually configured by admin. Routes are set and don't change unless manually updated.</li>
-                                    <li><strong>Dynamic Routing:</strong> Automatically updates using routing protocols like OSPF or BGP, adapting to network changes.</li>
-                                </ul>
-                                
-                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">5. Trunking</h4>
-                                <p class="mb-4">
-                                    Trunking allows multiple VLANs to use one cable between switches, significantly reducing cable clutter and cost.
-                                </p>
-                                <ul class="list-disc pl-6 mb-4 space-y-2">
-                                    <li><strong>802.1Q (Dot1Q):</strong> Standard trunking method used by all major vendors.</li>
-                                    <li><strong>ISL (Inter-Switch Link):</strong> Cisco's older proprietary method, now largely deprecated.</li>
-                                </ul>
-                                
-                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">6. ACL (Access Control List)</h4>
-                                <p class="mb-4">
-                                    ACL acts like a security filter in a network. It controls which traffic can enter or leave, providing an essential layer of security.
-                                </p>
-                                <ul class="list-disc pl-6 mb-4 space-y-2">
-                                    <li><strong>Standard:</strong> Filters by IP address only. Simple but effective for basic access control.</li>
-                                    <li><strong>Extended:</strong> Filters by IP, port, and protocol. Offers granular control over network traffic.</li>
-                                    <li><strong>Named:</strong> Uses easy-to-read ACL names instead of numbers, making management easier.</li>
-                                </ul>
-                                
-                                <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Quick Summary</h4>
-                                <div class="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-lg mb-4 border-l-4 border-cyan-500">
-                                    <ul class="space-y-2">
-                                        <li><strong>Network →</strong> Connects devices together</li>
-                                        <li><strong>Switch →</strong> Connects devices within LAN</li>
-                                        <li><strong>VLAN →</strong> Divides network logically</li>
-                                        <li><strong>Router →</strong> Connects different networks</li>
-                                        <li><strong>Trunk →</strong> Carries multiple VLANs</li>
-                                        <li><strong>ACL →</strong> Controls access & security</li>
-                                    </ul>
-                                </div>
-                                
-                                <p class="mt-4 font-semibold text-cyan-600">
-                                    Understanding these networking basics will give you a solid foundation for more advanced topics. Practice setting up networks in virtual environments like Packet Tracer or GNS3 to reinforce these concepts!
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <!-- Read More Button -->
-                        <button class="read-more-btn inline-flex items-center text-primary hover:text-secondary transition-colors duration-300 font-medium mt-4">
-                            <span class="btn-text">Read More</span>
-                            <i class="fas fa-chevron-down ml-2 text-sm transition-transform duration-300"></i>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2 - The Future of Internet -->
+                <!-- Blog Post 1 - The Future of Internet -->
                 <article class="blog-post bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group" data-category="career">
                     <div class="h-52 bg-gradient-to-br from-red-500 to-orange-600 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
@@ -311,14 +178,6 @@
                                 <p class="mb-4">
                                     Telegram founder and co-creator Pavel Durov has raised a chilling warning: the future internet may have no secrets. In a recent post on his 41st birthday, Durov emphasized that the next generation may not be able to use the internet freely, as the world is rapidly falling into the trap of digital control.
                                 </p>
-                                
-                                <!-- Privacy Security Image -->
-                                <div class="my-6 rounded-lg overflow-hidden shadow-lg">
-                                    <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&h=400&fit=crop" 
-                                         alt="Digital Privacy and Security Concept" 
-                                         class="w-full h-auto object-cover">
-                                    <p class="text-sm text-gray-500 text-center py-2 bg-gray-50 italic">Digital privacy and surveillance in the modern internet</p>
-                                </div>
                                 
                                 <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Global Examples of Increasing Surveillance</h4>
                                 <p class="mb-4">
@@ -406,14 +265,6 @@
                                     React Hooks revolutionized the way we write React components by allowing us to use state and other React features without writing a class. In this comprehensive guide, I'll walk you through the most essential hooks and how to use them effectively.
                                 </p>
                                 
-                                <!-- React Coding Image -->
-                                <div class="my-6 rounded-lg overflow-hidden shadow-lg">
-                                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop" 
-                                         alt="React JavaScript Code" 
-                                         class="w-full h-auto object-cover">
-                                    <p class="text-sm text-gray-500 text-center py-2 bg-gray-50 italic">Modern React development with Hooks</p>
-                                </div>
-                                
                                 <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Understanding useState</h4>
                                 <p class="mb-4">
                                     The useState hook is your gateway to managing state in functional components. Here's a simple example:
@@ -492,14 +343,6 @@ function increment() {
                                 <p class="mb-4">
                                     Building a RESTful API is a fundamental skill for backend developers. In this guide, I'll show you how to create a production-ready REST API using Node.js and Express framework.
                                 </p>
-                                
-                                <!-- Node.js API Development Image -->
-                                <div class="my-6 rounded-lg overflow-hidden shadow-lg">
-                                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=400&fit=crop" 
-                                         alt="Node.js Backend Development" 
-                                         class="w-full h-auto object-cover">
-                                    <p class="text-sm text-gray-500 text-center py-2 bg-gray-50 italic">Building RESTful APIs with Node.js and Express</p>
-                                </div>
                                 
                                 <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Setting Up Your Project</h4>
                                 <p class="mb-4">
@@ -590,14 +433,6 @@ app.listen(3000, () => {
                                     Choosing the right database is crucial for your application's success. Let me break down the key differences between MongoDB and MySQL to help you make an informed decision.
                                 </p>
                                 
-                                <!-- Database Comparison Image -->
-                                <div class="my-6 rounded-lg overflow-hidden shadow-lg">
-                                    <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop" 
-                                         alt="Database Systems Comparison" 
-                                         class="w-full h-auto object-cover">
-                                    <p class="text-sm text-gray-500 text-center py-2 bg-gray-50 italic">Comparing MongoDB and MySQL database systems</p>
-                                </div>
-                                
                                 <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">MongoDB: The NoSQL Champion</h4>
                                 <p class="mb-4">
                                     MongoDB is a document-oriented NoSQL database that stores data in flexible, JSON-like documents. It's perfect for:
@@ -683,14 +518,6 @@ app.listen(3000, () => {
                                 <p class="mb-4">
                                     Tailwind CSS has transformed how I build user interfaces. Instead of writing custom CSS, I compose designs using utility classes directly in my HTML. Let me show you why this approach is so powerful.
                                 </p>
-                                
-                                <!-- Tailwind CSS Design Image -->
-                                <div class="my-6 rounded-lg overflow-hidden shadow-lg">
-                                    <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&h=400&fit=crop" 
-                                         alt="Modern Web Design with CSS" 
-                                         class="w-full h-auto object-cover">
-                                    <p class="text-sm text-gray-500 text-center py-2 bg-gray-50 italic">Creating beautiful designs with Tailwind CSS utilities</p>
-                                </div>
                                 
                                 <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">Why Tailwind CSS?</h4>
                                 <p class="mb-4">
@@ -783,14 +610,6 @@ app.listen(3000, () => {
                                 <p class="mb-4">
                                     Binary Search Trees (BST) are fundamental data structures that every computer science student must master. They're not just academic concepts - they power everything from database indexes to file systems.
                                 </p>
-                                
-                                <!-- Binary Tree Algorithm Image -->
-                                <div class="my-6 rounded-lg overflow-hidden shadow-lg">
-                                    <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=400&fit=crop" 
-                                         alt="Data Structures and Algorithms" 
-                                         class="w-full h-auto object-cover">
-                                    <p class="text-sm text-gray-500 text-center py-2 bg-gray-50 italic">Understanding binary search tree data structures</p>
-                                </div>
                                 
                                 <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">What is a BST?</h4>
                                 <p class="mb-4">
@@ -894,14 +713,6 @@ Node insert(Node root, int value) {
                                 <p class="mb-4">
                                     As I reflect on my time at Green University of Bangladesh, I'm filled with gratitude for the experiences that shaped me — the challenges, breakthroughs, late nights, and moments of doubt that eventually turned into growth. My journey through Computer Science has been far from easy, but every step has brought me closer to the developer I am today.
                                 </p>
-                                
-                                <!-- Student Journey Image -->
-                                <div class="my-6 rounded-lg overflow-hidden shadow-lg">
-                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=400&fit=crop" 
-                                         alt="University Student Learning and Studying" 
-                                         class="w-full h-auto object-cover">
-                                    <p class="text-sm text-gray-500 text-center py-2 bg-gray-50 italic">My journey as a Computer Science student at Green University</p>
-                                </div>
                                 
                                 <h4 class="text-lg font-bold text-gray-900 mt-6 mb-3">The Beginning</h4>
                                 <p class="mb-4">
