@@ -23,12 +23,16 @@
     <!-- Custom Tailwind Config -->
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         primary: '#667eea',
                         secondary: '#764ba2',
                         accent: '#f093fb',
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                        'dark-hover': '#334155',
                     },
                     fontFamily: {
                         sans: ['Inter', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
@@ -38,46 +42,59 @@
         }
     </script>
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+    
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg transition-all duration-300">
+    <nav class="fixed top-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md z-50 shadow-lg dark:shadow-purple-500/10 transition-all duration-300 dark:border-b dark:border-purple-500/20">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-primary hover:text-secondary transition-colors duration-300">
                 Majharul Islam
             </a>
             
             <!-- Desktop Navigation -->
-            <ul class="hidden md:flex space-x-8 items-center">
-                <li><a href="index.html#home" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Home</a></li>
-                <li><a href="index.html#about" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">About</a></li>
-                <li><a href="index.html#skills" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Skills</a></li>
-                <li><a href="index.html#projects" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Projects</a></li>
+            <ul class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <li><a href="index.html#home" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Home</a></li>
+                <li><a href="index.html#about" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium">About</a></li>
+                <li><a href="index.html#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Skills</a></li>
+                <li><a href="index.html#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Projects</a></li>
                 <li><a href="blog.html" class="text-primary font-semibold transition-colors duration-300">Blog</a></li>
-                <li><a href="index.html#contact" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Contact</a></li>
+                <li><a href="index.html#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </li>
                 <li><a href="cv.html" target="_blank" class="inline-flex items-center px-5 py-2 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-full hover:shadow-lg transition-all duration-300 text-sm">
                     <i class="fas fa-file-pdf mr-2"></i>
                     Download CV
                 </a></li>
             </ul>
             
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden mobile-menu cursor-pointer">
-                <div class="w-6 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
-                <div class="w-6 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
-                <div class="w-6 h-0.5 bg-gray-700 transition-all duration-300"></div>
+            <!-- Mobile Menu Button & Theme Toggle -->
+            <div class="md:hidden flex items-center gap-3">
+                <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <div class="mobile-menu cursor-pointer">
+                    <div class="w-6 h-0.5 bg-gray-700 dark:bg-gray-300 mb-1 transition-all duration-300"></div>
+                    <div class="w-6 h-0.5 bg-gray-700 dark:bg-gray-300 mb-1 transition-all duration-300"></div>
+                    <div class="w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"></div>
+                </div>
             </div>
         </div>
         
         <!-- Mobile Navigation -->
-        <div class="nav-links md:hidden bg-white border-t hidden">
+        <div class="nav-links md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700 hidden">
             <div class="px-4 py-2 space-y-2">
-                <a href="index.html#home" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">Home</a>
-                <a href="index.html#about" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">About</a>
-                <a href="index.html#skills" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
-                <a href="index.html#projects" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="index.html#home" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300">Home</a>
+                <a href="index.html#about" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300">About</a>
+                <a href="index.html#skills" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300">Skills</a>
+                <a href="index.html#projects" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300">Projects</a>
                 <a href="blog.html" class="block py-2 text-primary font-semibold transition-colors duration-300">Blog</a>
-                <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
-                <a href="cv.html" target="_blank" class="block py-2 text-gray-700 hover:text-primary transition-colors duration-300">
+                <a href="index.html#contact" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300">Contact</a>
+                <a href="cv.html" target="_blank" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300">
                     <i class="fas fa-file-pdf mr-2"></i>Download CV
                 </a>
             </div>
@@ -85,42 +102,42 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="blog-hero-section pt-32 pb-20 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 relative overflow-hidden">
-        <!-- Decorative elements -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+    <section class="blog-hero-section pt-32 pb-20 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900 relative overflow-hidden transition-colors duration-300">
+        <!-- Decorative elements with dark mode glow -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary/10 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
         
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             <div class="text-center">
                 <div class="inline-block mb-4">
-                    <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold text-primary border border-primary/20">
+                    <span class="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-sm font-semibold text-primary border border-primary/20">
                         <i class="fas fa-pencil-alt mr-2"></i>Blog & Insights
                     </span>
                 </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 animate-slide-up">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 animate-slide-up">
                     <span class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
                         Tech Insights & Tutorials
                     </span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
                     Exploring web development, algorithms, and the journey of becoming a better developer
                 </p>
                 
                 <!-- Categories Filter -->
                 <div class="flex flex-wrap justify-center gap-3" id="categoryFilters">
-                    <button class="category-btn active px-6 py-3 bg-white text-primary shadow-md rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 border-2 border-primary" data-category="all">
+                    <button class="category-btn active px-6 py-3 bg-white dark:bg-slate-800 text-primary dark:text-purple-400 shadow-md dark:shadow-purple-500/20 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 border-2 border-primary dark:border-purple-500" data-category="all">
                         <i class="fas fa-th mr-2"></i>All Posts
                     </button>
-                    <button class="category-btn px-6 py-3 bg-white/50 backdrop-blur-sm text-gray-700 rounded-full font-medium hover:bg-white hover:shadow-md hover:scale-105 transition-all duration-300" data-category="tutorial">
+                    <button class="category-btn px-6 py-3 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full font-medium hover:bg-white dark:hover:bg-slate-700 hover:shadow-md hover:scale-105 transition-all duration-300 border border-transparent dark:border-purple-500/20" data-category="tutorial">
                         <i class="fas fa-graduation-cap mr-2"></i>Tutorials
                     </button>
-                    <button class="category-btn px-6 py-3 bg-white/50 backdrop-blur-sm text-gray-700 rounded-full font-medium hover:bg-white hover:shadow-md hover:scale-105 transition-all duration-300" data-category="web-dev">
+                    <button class="category-btn px-6 py-3 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full font-medium hover:bg-white dark:hover:bg-slate-700 hover:shadow-md hover:scale-105 transition-all duration-300 border border-transparent dark:border-purple-500/20" data-category="web-dev">
                         <i class="fas fa-code mr-2"></i>Web Dev
                     </button>
-                    <button class="category-btn px-6 py-3 bg-white/50 backdrop-blur-sm text-gray-700 rounded-full font-medium hover:bg-white hover:shadow-md hover:scale-105 transition-all duration-300" data-category="algorithms">
+                    <button class="category-btn px-6 py-3 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full font-medium hover:bg-white dark:hover:bg-slate-700 hover:shadow-md hover:scale-105 transition-all duration-300 border border-transparent dark:border-purple-500/20" data-category="algorithms">
                         <i class="fas fa-project-diagram mr-2"></i>Algorithms
                     </button>
-                    <button class="category-btn px-6 py-3 bg-white/50 backdrop-blur-sm text-gray-700 rounded-full font-medium hover:bg-white hover:shadow-md hover:scale-105 transition-all duration-300" data-category="career">
+                    <button class="category-btn px-6 py-3 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full font-medium hover:bg-white dark:hover:bg-slate-700 hover:shadow-md hover:scale-105 transition-all duration-300 border border-transparent dark:border-purple-500/20" data-category="career">
                         <i class="fas fa-briefcase mr-2"></i>Career
                     </button>
                 </div>
@@ -129,17 +146,19 @@
     </section>
 
     <!-- Blog Posts Section -->
-    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-800 transition-colors duration-300 relative">
+        <!-- Dark mode gradient overlay -->
+        <div class="dark:block hidden absolute inset-0 bg-gradient-to-b from-purple-500/5 via-transparent to-blue-500/5"></div>
         <div class="max-w-6xl mx-auto px-4">
             <!-- Section Header -->
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Latest Articles</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Latest Articles</h2>
                 <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
             </div>
             
             <div class="blog-posts-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Blog Post 1 - Networking Basics -->
-                <article class="blog-post bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group" data-category="tutorial">
+                <article class="blog-post bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl dark:shadow-purple-500/10 dark:hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-2 group border border-gray-100 dark:border-purple-500/20 dark:hover:border-purple-500/50" data-category="tutorial">
                     <div class="h-52 bg-gradient-to-br from-cyan-500 to-blue-600 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
                             <i class="fas fa-network-wired text-7xl text-white opacity-20"></i>
@@ -149,14 +168,14 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-4 font-medium">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">
                             <i class="far fa-calendar mr-2 text-primary"></i>
                             <span>October 18, 2025</span>
                             <span class="mx-2">•</span>
                             <i class="far fa-clock mr-2 text-primary"></i>
                             <span>7 min read</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
                             Basics of Networking: Easy Explanation for Beginners
                         </h3>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -272,7 +291,7 @@
                 </article>
 
                 <!-- Blog Post 2 - The Future of Internet -->
-                <article class="blog-post bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group" data-category="career">
+                <article class="blog-post bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl dark:shadow-pink-500/10 dark:hover:shadow-pink-500/30 transition-all duration-500 hover:-translate-y-2 group border border-gray-100 dark:border-pink-500/20 dark:hover:border-pink-500/50" data-category="career">
                     <div class="h-52 bg-gradient-to-br from-red-500 to-orange-600 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
                             <i class="fas fa-shield-alt text-7xl text-white opacity-20"></i>
@@ -1016,7 +1035,7 @@ Node insert(Node root, int value) {
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 dark:bg-slate-950 text-white py-12 transition-colors duration-300 border-t dark:border-purple-500/20">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center">
                 <div class="mb-8">
