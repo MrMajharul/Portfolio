@@ -57,6 +57,18 @@ body {
     line-clamp: 3;
 }
 
+/* Typing cursor animation */
+.typing-cursor {
+    animation: blink 0.7s infinite;
+    font-weight: 100;
+    color: #667eea;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
 /* Custom fade-in animation */
 .fade-in {
     opacity: 0;

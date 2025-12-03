@@ -125,6 +125,7 @@
             <!-- Desktop Navigation -->
             <ul class="hidden md:flex space-x-6 lg:space-x-8 items-center">
                 <li><a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 font-medium">Home</a></li>
+                <li><a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 font-medium">Services</a></li>
                 <li><a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 font-medium">About</a></li>
                 <li><a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 font-medium">Skills</a></li>
                 <li><a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 font-medium">Projects</a></li>
@@ -160,6 +161,7 @@
         <div class="nav-links md:hidden bg-white dark:bg-slate-900 border-t dark:border-purple-500/20 hidden">
             <div class="px-4 py-2 space-y-2">
                 <a href="#home" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition-colors duration-300">Home</a>
+                <a href="#services" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition-colors duration-300">Services</a>
                 <a href="#about" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition-colors duration-300">About</a>
                 <a href="#skills" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition-colors duration-300">Skills</a>
                 <a href="#projects" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition-colors duration-300">Projects</a>
@@ -182,11 +184,16 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
                 <div class="lg:w-1/2 text-center lg:text-left w-full">
+                    <!-- Available for Hire Badge -->
+                    <div class="inline-flex items-center px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-medium mb-4 animate-slide-up">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                        Available for Opportunities
+                    </div>
                     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 animate-slide-up leading-tight">
                         Hi, I'm <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Majharul Islam</span>
                     </h1>
                     <div class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-3 animate-slide-up animation-delay-200">
-                        Computer Science & Engineering Student
+                        <span id="typing-text"></span><span class="typing-cursor">|</span>
                     </div>
                     <div class="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start mb-6 animate-slide-up animation-delay-300">
                         <span class="inline-flex items-center px-3 sm:px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 shadow-md">
@@ -231,8 +238,106 @@
         </div>
     </section>
 
+    <!-- Services / What I Do Section -->
+    <section id="services" class="py-12 sm:py-16 lg:py-20 bg-white dark:bg-slate-900 transition-colors duration-300 relative">
+        <div class="dark:block hidden absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 fade-in">What I Do</h2>
+                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 fade-in">Services I offer</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 fade-in"></div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10">
+                <!-- Service 1 -->
+                <div class="group bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-700 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 fade-in border border-gray-100 dark:border-purple-500/20">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                        <i class="fas fa-laptop-code text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Web Development</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Building responsive, modern websites and web applications using React, Node.js, and other cutting-edge technologies.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">React</span>
+                        <span class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">Node.js</span>
+                        <span class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">Express</span>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="group bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-700 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 fade-in border border-gray-100 dark:border-pink-500/20">
+                    <div class="w-16 h-16 bg-gradient-to-br from-secondary to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                        <i class="fas fa-database text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Backend Development</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Creating robust server-side applications with RESTful APIs, database design, and authentication systems.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-secondary/10 text-secondary px-3 py-1 rounded-full">MySQL</span>
+                        <span class="text-xs bg-secondary/10 text-secondary px-3 py-1 rounded-full">MongoDB</span>
+                        <span class="text-xs bg-secondary/10 text-secondary px-3 py-1 rounded-full">REST API</span>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="group bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-700 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 fade-in border border-gray-100 dark:border-green-500/20">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                        <i class="fas fa-mobile-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Responsive Design</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Designing beautiful, mobile-first interfaces that work flawlessly across all devices and screen sizes.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-green-500/10 text-green-600 px-3 py-1 rounded-full">Tailwind</span>
+                        <span class="text-xs bg-green-500/10 text-green-600 px-3 py-1 rounded-full">CSS3</span>
+                        <span class="text-xs bg-green-500/10 text-green-600 px-3 py-1 rounded-full">Figma</span>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="group bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-700 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 fade-in border border-gray-100 dark:border-orange-500/20">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                        <i class="fas fa-cogs text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Problem Solving</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Solving complex algorithmic problems using data structures and efficient algorithms for optimal performance.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-orange-500/10 text-orange-600 px-3 py-1 rounded-full">DSA</span>
+                        <span class="text-xs bg-orange-500/10 text-orange-600 px-3 py-1 rounded-full">Algorithms</span>
+                        <span class="text-xs bg-orange-500/10 text-orange-600 px-3 py-1 rounded-full">Logic</span>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="group bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-700 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 fade-in border border-gray-100 dark:border-blue-500/20">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                        <i class="fab fa-git-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Version Control</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Managing code repositories with Git, collaborating on open-source projects, and maintaining clean version history.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-blue-500/10 text-blue-600 px-3 py-1 rounded-full">Git</span>
+                        <span class="text-xs bg-blue-500/10 text-blue-600 px-3 py-1 rounded-full">GitHub</span>
+                        <span class="text-xs bg-blue-500/10 text-blue-600 px-3 py-1 rounded-full">CI/CD</span>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="group bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-700 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 fade-in border border-gray-100 dark:border-purple-500/20">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                        <i class="fas fa-paint-brush text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">UI/UX Design</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Creating intuitive user interfaces and experiences with a focus on usability, accessibility, and visual appeal.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-purple-500/10 text-purple-600 px-3 py-1 rounded-full">Figma</span>
+                        <span class="text-xs bg-purple-500/10 text-purple-600 px-3 py-1 rounded-full">UI Design</span>
+                        <span class="text-xs bg-purple-500/10 text-purple-600 px-3 py-1 rounded-full">Prototyping</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section id="about" class="py-12 sm:py-16 lg:py-20 bg-white dark:bg-slate-900 transition-colors duration-300 relative">
+    <section id="about" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300 relative">
         <!-- Dark mode gradient overlay -->
         <div class="dark:block hidden absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent"></div>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -268,14 +373,22 @@
                     </div>
                     
                     <!-- Stats -->
-                    <div class="grid grid-cols-2 gap-4 sm:gap-6 pt-6 sm:pt-8">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 sm:pt-8">
                         <div class="text-center p-3 sm:p-4 bg-gradient-to-br from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 rounded-xl">
-                            <div class="text-2xl sm:text-3xl font-bold text-primary mb-2">6+</div>
-                            <div class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm font-medium">Projects</div>
+                            <div class="text-2xl sm:text-3xl font-bold text-primary mb-2">24+</div>
+                            <div class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm font-medium">Repositories</div>
                         </div>
                         <div class="text-center p-3 sm:p-4 bg-gradient-to-br from-secondary/10 to-secondary/5 dark:from-secondary/20 dark:to-secondary/10 rounded-xl">
                             <div class="text-2xl sm:text-3xl font-bold text-secondary mb-2">2+</div>
                             <div class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm font-medium">Years Coding</div>
+                        </div>
+                        <div class="text-center p-3 sm:p-4 bg-gradient-to-br from-green-500/10 to-green-500/5 dark:from-green-500/20 dark:to-green-500/10 rounded-xl">
+                            <div class="text-2xl sm:text-3xl font-bold text-green-500 mb-2">329+</div>
+                            <div class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm font-medium">Contributions</div>
+                        </div>
+                        <div class="text-center p-3 sm:p-4 bg-gradient-to-br from-orange-500/10 to-orange-500/5 dark:from-orange-500/20 dark:to-orange-500/10 rounded-xl">
+                            <div class="text-2xl sm:text-3xl font-bold text-orange-500 mb-2">15+</div>
+                            <div class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm font-medium">Followers</div>
                         </div>
                     </div>
                     
@@ -430,6 +543,7 @@
                             </div>
                         </div>
                         <div class="pt-2">
+                            <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">TypeScript</span>
                             <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">HTML/CSS</span>
                             <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">SQL</span>
                         </div>
@@ -749,16 +863,25 @@
                         <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-calendar-check text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Event Management System</h3>
-                        <p class="text-sm text-indigo-600 dark:text-indigo-400 font-medium mb-3">Java</p>
-                        <p class="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3">A comprehensive Java-based event management system with features for organizing, scheduling, and managing events with participant registration.</p>
-                        <a href="https://github.com/MrMajharul/Event-Management-System-with-Java" target="_blank" class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300 font-medium group-hover:translate-x-2 transform transition-transform">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">E-commerce Platform</h3>
+                        <p class="text-sm text-indigo-600 dark:text-indigo-400 font-medium mb-3">Next.js • React • Express.js • MongoDB • Stripe</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3">Full-stack e-commerce platform with product management, shopping cart, user authentication, and Stripe payment integration.</p>
+                        <a href="https://github.com/MrMajharul/ecommerce-platform" target="_blank" class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300 font-medium group-hover:translate-x-2 transform transition-transform">
                             <i class="fab fa-github mr-2"></i>
                             View on GitHub
                             <i class="fas fa-arrow-right ml-2 text-sm"></i>
                         </a>
                     </div>
                 </div>
+            </div>
+            
+            <!-- View More Projects Button -->
+            <div class="text-center mt-12 fade-in">
+                <a href="https://github.com/MrMajharul?tab=repositories" target="_blank" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-github mr-3"></i>
+                    View All 24+ Projects
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -834,6 +957,12 @@
                                 </a>
                                 <a href="https://linkedin.com/in/majharul-islam-68945326b/" target="_blank" class="w-10 h-10 bg-gray-100 dark:bg-slate-700 hover:bg-blue-600 dark:hover:bg-blue-600 text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
                                     <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://www.facebook.com/majharul.islam.891882" target="_blank" class="w-10 h-10 bg-gray-100 dark:bg-slate-700 hover:bg-blue-500 dark:hover:bg-blue-500 text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://www.hackerrank.com/profile/mrmajharulislam1" target="_blank" class="w-10 h-10 bg-gray-100 dark:bg-slate-700 hover:bg-green-500 dark:hover:bg-green-500 text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                                    <i class="fab fa-hackerrank"></i>
                                 </a>
                                 <a href="mailto:majharul.cs@gmail.com" class="w-10 h-10 bg-gray-100 dark:bg-slate-700 hover:bg-red-500 dark:hover:bg-red-500 text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
                                     <i class="fas fa-envelope"></i>
@@ -918,6 +1047,16 @@
                            aria-label="LinkedIn Profile">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
+                        <a href="https://www.facebook.com/majharul.islam.891882" target="_blank" 
+                           class="w-12 h-12 bg-gray-800 hover:bg-blue-500 text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                           aria-label="Facebook Profile">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://www.hackerrank.com/profile/mrmajharulislam1" target="_blank" 
+                           class="w-12 h-12 bg-gray-800 hover:bg-green-500 text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                           aria-label="HackerRank Profile">
+                            <i class="fab fa-hackerrank text-xl"></i>
+                        </a>
                         <a href="mailto:majharul.cs@gmail.com" 
                            class="w-12 h-12 bg-gray-800 hover:bg-red-500 text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
                            aria-label="Email Me">
@@ -925,16 +1064,17 @@
                         </a>
                     </div>
                    
-                    <!-- Quick Links
+                    <!-- Quick Links -->
                     <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm">
                         <a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                        <a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Services</a>
                         <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">About</a>
                         <a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-300">Skills</a>
                         <a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
                         <a href="blog.html" class="text-gray-400 hover:text-white transition-colors duration-300">Blog</a>
                         <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
                         <a href="cv.html" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">CV</a>
-                    </div>  -->
+                    </div>
                 </div>
                 
                 <div class="border-t border-gray-800 pt-8">

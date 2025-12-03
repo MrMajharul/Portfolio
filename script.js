@@ -1,5 +1,63 @@
 // Portfolio JavaScript - Majharul Islam (Tailwind Version)
 
+// Typing Animation Effect
+class TypeWriter {
+    constructor(element, words, wait = 3000) {
+        this.element = element;
+        this.words = words;
+        this.wait = parseInt(wait, 10);
+        this.txt = '';
+        this.wordIndex = 0;
+        this.isDeleting = false;
+        this.type();
+    }
+
+    type() {
+        const current = this.wordIndex % this.words.length;
+        const fullTxt = this.words[current];
+
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.element.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+        let typeSpeed = 100;
+
+        if (this.isDeleting) {
+            typeSpeed /= 2;
+        }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+            typeSpeed = this.wait;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.wordIndex++;
+            typeSpeed = 500;
+        }
+
+        setTimeout(() => this.type(), typeSpeed);
+    }
+}
+
+// Initialize Typing Effect
+document.addEventListener('DOMContentLoaded', () => {
+    const typingElement = document.getElementById('typing-text');
+    if (typingElement) {
+        const words = [
+            'Computer Science & Engineering Student',
+            'Full Stack Developer',
+            'Frontend Developer',
+            'Open Source Contributor',
+            'Currently Learning Next.js'
+        ];
+        new TypeWriter(typingElement, words, 2000);
+    }
+});
+
 // Dark Mode functionality
 function initDarkMode() {
     const themeToggleBtn = document.getElementById('theme-toggle');
