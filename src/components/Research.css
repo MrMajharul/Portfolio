@@ -1,0 +1,101 @@
+.research-section { position: relative; overflow: hidden; }
+
+.research-bg-orb {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+  right: -100px; top: 50%;
+  transform: translateY(-50%);
+}
+
+.research-card {
+  padding: 36px 40px;
+  max-width: 900px;
+}
+
+.rc-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.rc-icon {
+  width: 44px; height: 44px;
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.rc-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.rc-title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(17px, 2.5vw, 22px);
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.rc-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+}
+.rc-venue { color: var(--text-muted); }
+.rc-sep { color: var(--border-hi); }
+.rc-track { color: var(--primary-hi); }
+
+.rc-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin-bottom: 24px;
+}
+.rc-highlights li {
+  padding-left: 20px;
+  position: relative;
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.rc-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 9px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.rc-footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.rc-authors {
+  font-size: 13.5px;
+  color: var(--text-dim);
+}
+.rc-authors-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.rc-author-me {
+  color: var(--primary-hi);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .research-card { padding: 24px 20px; }
+}
