@@ -71,7 +71,7 @@ export default function About() {
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <img src={personal.photo} alt="Majharul Islam" className="about-photo" />
+            <img src={personal.aboutPhoto} alt="Majharul Islam" className="about-photo" />
             <div className="about-photo-overlay" />
           </motion.div>
 

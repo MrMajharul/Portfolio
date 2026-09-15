@@ -48,7 +48,7 @@ export default function Hero() {
         {/* Left: text */}
         <motion.div className="hero-text" variants={container} initial="hidden" animate="show">
           <motion.div variants={item} className="hero-available">
-            <span className="badge badge-green badge-pulse">Available for opportunities</span>
+            <span className="badge badge-green badge-pulse">Open to research & development opportunities</span>
           </motion.div>
 
           <motion.p variants={item} className="hero-eyebrow">
@@ -86,7 +86,17 @@ export default function Hero() {
             <a href={personal.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn"> <RiLinkedinLine size={18}/> </a>
             <a href={`mailto:${personal.email}`} aria-label="Email">                          <RiMailLine     size={18}/> </a>
             <span className="social-divider" />
-            <span className="hero-mono">{personal.email}</span>
+            <span className="hero-email">{personal.email}</span>
+          </motion.div>
+
+          <motion.div variants={item} className="hero-keywords">
+            <span>Research</span>
+            <span className="kw-dot">·</span>
+            <span>Web Development</span>
+            <span className="kw-dot">·</span>
+            <span>Open Source</span>
+            <span className="kw-dot">·</span>
+            <span>CSE</span>
           </motion.div>
         </motion.div>
 
@@ -100,9 +110,7 @@ export default function Hero() {
           <div className="hero-photo-ring" />
           <div className="hero-photo-glow" />
           <img src={personal.photo} alt="Majharul Islam" className="hero-photo" />
-          <div className="hero-photo-badge">
-            <span className="badge badge-primary">🎓 CSE @ Green University</span>
-          </div>
+          
         </motion.div>
       </div>
 

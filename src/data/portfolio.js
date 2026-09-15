@@ -1,6 +1,6 @@
 export const personal = {
   name: "Majharul Islam",
-  roles: ["Full-Stack Developer", "CS Researcher", "Open Source Contributor", "Grad School Applicant"],
+  roles: ["Software Developer", "CS Researcher", "Full-Stack Engineer"],
   tagline: "Building research-grade systems and live web platforms.",
   bio: [
     "I'm a final-year Computer Science & Engineering student at Green University of Bangladesh, currently working as an IT Intern at the Dhaka University Research Society (DURS) and serving as Treasurer of the Green University Computer Club (GUCC).",
@@ -13,6 +13,7 @@ export const personal = {
   linkedin: "https://linkedin.com/in/majharul-islam-68945326b/",
   cv: "/cv.html",
   photo: "/majharul-photo.png",
+  aboutPhoto: "/image2.png",
   available: true,
 };
 
