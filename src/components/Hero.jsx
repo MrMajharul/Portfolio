@@ -101,7 +101,7 @@ export default function Hero() {
           <div className="hero-photo-glow" />
           <img src={personal.photo} alt="Majharul Islam" className="hero-photo" />
           <div className="hero-photo-badge">
-            <span className="badge badge-primary">🎓 BSc CSE · 2027</span>
+            <span className="badge badge-primary">🎓 CSE @ Green University</span>
           </div>
         </motion.div>
       </div>

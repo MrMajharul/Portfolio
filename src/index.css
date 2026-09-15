@@ -29,6 +29,25 @@
   --radius-lg:  20px;
 }
 
+/* ── Light mode overrides ── */
+[data-theme="light"] {
+  --bg:        #F5F7FF;
+  --bg-card:   #FFFFFF;
+  --bg-glass:  rgba(255, 255, 255, 0.75);
+  --border:    rgba(99, 102, 241, 0.18);
+  --border-hi: rgba(99, 102, 241, 0.5);
+  --primary:   #4F46E5;
+  --primary-lo:#C7D2FE;
+  --primary-hi:#4338CA;
+  --accent:    #0891B2;
+  --gold:      #D97706;
+  --green:     #059669;
+  --text:      #0F172A;
+  --text-muted:#334155;
+  --text-dim:  #64748B;
+}
+
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -41,6 +60,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
 }
 
 /* ── Scrollbar ── */
@@ -61,7 +81,9 @@ body::before {
   background-size: 180px;
   pointer-events: none;
   z-index: 0;
+  transition: opacity 0.35s ease;
 }
+[data-theme="light"] body::before { opacity: 0.015; }
 
 /* ── Gradient orb ── */
 .orb {

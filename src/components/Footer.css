@@ -25,7 +25,14 @@
   color: var(--text);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+.footer-logo-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  object-fit: cover;
+  border: 1px solid rgba(99,102,241,0.3);
 }
 .footer-tagline {
   font-family: var(--font-mono);

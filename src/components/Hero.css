@@ -19,6 +19,12 @@
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%);
   pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+[data-theme="light"] .hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(79,70,229,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,70,229,0.08) 1px, transparent 1px);
 }
 
 /* Orbs */

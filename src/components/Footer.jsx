@@ -9,14 +9,14 @@ export default function Footer() {
       <div className="container footer-inner">
         <div className="footer-left">
           <a href="#" onClick={e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}} className="footer-logo">
-            <span className="logo-dot" />
+            <img src="/logo.jpg" alt="MI logo" className="footer-logo-img" />
             Majharul<span className="logo-accent">.dev</span>
           </a>
-          <p className="footer-tagline">CS student · Researcher · Builder</p>
+          <p className="footer-tagline">CSE student · Researcher · Builder</p>
         </div>
 
         <p className="footer-copy">
-          Built with <RiHeartLine style={{display:'inline',color:'var(--primary)',verticalAlign:'middle'}} /> using React + Vite
+          
         </p>
 
         <div className="footer-socials">

@@ -160,11 +160,13 @@ export const education = [
     degree: "BSc in Computer Science & Engineering",
     institution: "Green University of Bangladesh",
     period: "2023 — 2027 (Expected)",
+    link: "https://cse.green.edu.bd/",
   },
   {
     degree: "Higher Secondary Certificate — Science",
     institution: "Kabi Nazrul Govt. College, Dhaka",
     period: "2020 — 2021",
+    link: "https://kabinazrulcollege.gov.bd/",
   },
   {
     degree: "Secondary School Certificate — Science",

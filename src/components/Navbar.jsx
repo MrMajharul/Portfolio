@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { personal } from '../data/portfolio';
+import { useTheme } from '../context/ThemeContext';
 import {
-  RiGithubLine, RiLinkedinLine, RiMailLine, RiMenuLine, RiCloseLine, RiFileTextLine
+  RiGithubLine, RiLinkedinLine, RiMailLine, RiMenuLine, RiCloseLine, RiFileTextLine,
+  RiSunLine, RiMoonLine
 } from 'react-icons/ri';
 import './Navbar.css';
 
@@ -12,6 +14,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive]     = useState('');
   const [open, setOpen]         = useState(false);
+  const { theme, toggle }       = useTheme();
 
   useEffect(() => {
     const onScroll = () => {
@@ -43,7 +46,7 @@ export default function Navbar() {
         <div className="nav-inner container">
           {/* Logo */}
           <a href="#" className="nav-logo" onClick={e => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); }}>
-            <span className="logo-dot" />
+            <img src="/logo.jpg" alt="MI logo" className="nav-logo-img" />
             <span>Majharul<span className="logo-accent">.dev</span></span>
           </a>
 
@@ -69,6 +72,23 @@ export default function Navbar() {
             <a href={personal.linkedin} target="_blank" rel="noopener" className="nav-icon" aria-label="LinkedIn">
               <RiLinkedinLine />
             </a>
+            <button
+              className="theme-toggle"
+              onClick={toggle}
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={theme}
+                  initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: 90, opacity: 0, scale: 0.6 }}
+                  transition={{ duration: 0.22 }}
+                >
+                  {theme === 'dark' ? <RiSunLine size={18} /> : <RiMoonLine size={18} />}
+                </motion.span>
+              </AnimatePresence>
+            </button>
             <a href={personal.cv} target="_blank" rel="noopener" className="btn btn-primary nav-cv">
               <RiFileTextLine /> CV
             </a>
@@ -112,6 +132,19 @@ export default function Navbar() {
               <a href={personal.github} target="_blank" rel="noopener"><RiGithubLine size={20}/></a>
               <a href={personal.linkedin} target="_blank" rel="noopener"><RiLinkedinLine size={20}/></a>
               <a href={`mailto:${personal.email}`}><RiMailLine size={20}/></a>
+              <button className="theme-toggle drawer-theme" onClick={toggle} aria-label="Toggle theme">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={theme}
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.22 }}
+                  >
+                    {theme === 'dark' ? <RiSunLine size={18}/> : <RiMoonLine size={18}/>}
+                  </motion.span>
+                </AnimatePresence>
+              </button>
             </div>
           </motion.div>
         )}

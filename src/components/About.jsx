@@ -39,8 +39,9 @@ export default function About() {
           ))}
 
           <motion.div className="about-meta" variants={fadeUp(0.32)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
-            <span><RiMapPinLine /> {personal.location}</span>
-            <span><RiGraduationCapLine /> Green University of Bangladesh</span>
+            <span> <RiMapPinLine /> {personal.location} </span>
+            <a href="https://green.edu.bd" target="_blank" rel="noopener noreferrer"> 
+            <RiGraduationCapLine /> Green University of Bangladesh </a>
           </motion.div>
 
           {/* Education */}
@@ -50,7 +51,11 @@ export default function About() {
               <div key={i} className="edu-row">
                 <div>
                   <p className="edu-degree">{e.degree}</p>
-                  <p className="edu-inst">{e.institution}</p>
+                  {e.link ? (
+                    <a href={e.link} target="_blank" rel="noopener noreferrer" className="edu-inst">{e.institution}</a>
+                  ) : (
+                    <p className="edu-inst">{e.institution}</p>
+                  )}
                 </div>
                 <span className="edu-period">{e.period}</span>
               </div>

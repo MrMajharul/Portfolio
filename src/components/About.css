@@ -21,6 +21,7 @@
   font-family: var(--font-mono);
   margin: 10px 0 28px;
 }
+.about-meta a { text-decoration: none; color: var(--text-dim); display: flex; align-items: center; gap: 6px; }
 .about-meta span { display: flex; align-items: center; gap: 6px; }
 
 .about-edu-label {
@@ -51,6 +52,15 @@
 .edu-inst {
   font-size: 13px;
   color: var(--text-muted);
+  display: block;
+}
+a.edu-inst {
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+a.edu-inst:hover {
+  text-decoration: underline;
 }
 .edu-period {
   font-family: var(--font-mono);
