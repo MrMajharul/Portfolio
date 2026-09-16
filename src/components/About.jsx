@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { personal, stats, education } from '../data/portfolio';
+import { personal, education } from '../data/portfolio';
 import { RiGraduationCapLine, RiMapPinLine } from 'react-icons/ri';
+import useGitHubStats from '../hooks/useGitHubStats';
 import './About.css';
 
 const fadeUp = (delay = 0) => ({
@@ -12,6 +13,7 @@ const fadeUp = (delay = 0) => ({
 export default function About() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+  const { stats } = useGitHubStats();
 
   return (
     <section id="about" ref={ref}>
