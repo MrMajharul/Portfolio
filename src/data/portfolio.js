@@ -192,6 +192,13 @@ export const certificates = [
     icon: "🛢️",
   },
   {
+    title: "Introduction to Relational Databases in SQL",
+    issuer: "DataCamp",
+    date: "Sep 2026",
+    link: "/certificates/Introduction%20to%20Relational%20Databases%20in%20SQL.pdf",
+    icon: "🗄️",
+  },
+  {
     title: "Intermediate GitHub Concepts",
     issuer: "DataCamp",
     date: "Jan 2026",
