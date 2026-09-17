@@ -1,0 +1,112 @@
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.blog-card:hover {
+  border-color: var(--border-hi);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(99,102,241,0.1);
+}
+
+.blog-card:hover::before {
+  opacity: 1;
+}
+
+.blog-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.blog-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.blog-arrow {
+  font-size: 18px;
+  color: var(--text-dim);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.blog-card:hover .blog-arrow {
+  color: var(--primary);
+  transform: translate(2px, -2px);
+}
+
+.blog-title {
+  font-family: var(--font-head);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.blog-excerpt {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.blog-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--primary-hi);
+  background: rgba(99,102,241,0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -8,7 +8,7 @@ import {
 } from 'react-icons/ri';
 import './Navbar.css';
 
-const links = ['About', 'Research', 'Experience', 'Projects', 'Skills', 'Contact'];
+const links = ['About', 'Research', 'Experience', 'Projects', 'Skills', 'Certificates', 'Blog', 'Contact'];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

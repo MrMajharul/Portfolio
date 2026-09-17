@@ -175,3 +175,93 @@ export const education = [
     period: "2019 — 2020",
   },
 ];
+
+export const certificates = [
+  {
+    title: "Python (Django) Training",
+    issuer: "IIT, Jahangirnagar University — EDGE Project",
+    date: "Feb 2025",
+    link: "/certificates/Certificate.pdf",
+    icon: "🐍",
+  },
+  {
+    title: "Understanding Data Engineering",
+    issuer: "DataCamp",
+    date: "Sep 2026",
+    link: "https://www.datacamp.com/statement-of-accomplishment/course/9374d64bfa486f39bdf1452706d043e0878bf14a",
+    icon: "🛢️",
+  },
+  {
+    title: "Intermediate GitHub Concepts",
+    issuer: "DataCamp",
+    date: "Jan 2026",
+    link: "/certificates/certificate (1).pdf",
+    icon: "🔀",
+  },
+  {
+    title: "Understanding Cloud Computing",
+    issuer: "DataCamp",
+    date: "Jul 2025",
+    link: "/certificates/certificate (5).pdf",
+    icon: "☁️",
+  },
+  {
+    title: "Introduction to SQL Server",
+    issuer: "DataCamp",
+    date: "Jul 2025",
+    link: "/certificates/certificate (2).pdf",
+    icon: "🗄️",
+  },
+  {
+    title: "Introduction to Git",
+    issuer: "DataCamp",
+    date: "Jul 2025",
+    link: "/certificates/certificate (3).pdf",
+    icon: "📦",
+  },
+  {
+    title: "Introduction to GitHub Concepts",
+    issuer: "DataCamp",
+    date: "Jul 2025",
+    link: "/certificates/certificate (4).pdf",
+    icon: "🐙",
+  },
+  {
+    title: "Cyber Hygiene",
+    issuer: "Certified Course",
+    date: "May 2025",
+    link: "/certificates/Majharul Islam3384737-Cyber_Hygiene.pdf",
+    icon: "🔒",
+  },
+  {
+    title: "Volunteer — GUB CSE Carnival 2024",
+    issuer: "Green University of Bangladesh",
+    date: "2024",
+    link: "/certificates/Volunteer-232002256.pdf",
+    icon: "🤝",
+  },
+];
+
+export const blogPosts = [
+  {
+    title: "Getting Started with React 19 — What's New?",
+    excerpt: "React 19 brings exciting new features like the React Compiler, Server Components, and more. Here's what I learned while upgrading my portfolio.",
+    date: "Sep 2026",
+    tags: ["React", "JavaScript", "Web Dev"],
+    link: "#",
+  },
+  {
+    title: "My Journey into Genomic Data Analysis",
+    excerpt: "How I went from writing web apps to co-authoring a research paper on cancer immunotherapy biomarker validation using Python and statistical methods.",
+    date: "Aug 2026",
+    tags: ["Research", "Python", "Data Science"],
+    link: "#",
+  },
+  {
+    title: "Building a Full-Stack App with Node.js & MySQL",
+    excerpt: "Lessons learned from building an Employee Task Management System with JWT auth, role-based access, and real-time notifications.",
+    date: "Jul 2026",
+    tags: ["Node.js", "MySQL", "Backend"],
+    link: "#",
+  },
+];
