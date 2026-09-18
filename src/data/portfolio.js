@@ -176,6 +176,23 @@ export const education = [
   },
 ];
 
+export const featuredCertificate = {
+  title: "Associate Data Analyst",
+  issuer: "DataCamp",
+  credentialId: "DAA0014389060988",
+  date: "September 17, 2026",
+  badge: "/certificates/DA%20Associate%20-%20badge%20with%20outline.png",
+  link: "/certificates/DAA0014389060988.pdf",
+  verifyUrl: "https://www.datacamp.com/certificate/DAA0014389060988",
+  verificationNote: "Verified Professional Industry Certification",
+  skills: [
+    "Exploratory Data Analysis",
+    "SQL Querying & Extraction",
+    "Statistical Data Preparation",
+    "Business Intelligence & Insights",
+  ],
+};
+
 export const certificates = [
   {
     title: "Python (Django) Training",
@@ -249,26 +266,5 @@ export const certificates = [
   },
 ];
 
-export const blogPosts = [
-  {
-    title: "Getting Started with React 19 — What's New?",
-    excerpt: "React 19 brings exciting new features like the React Compiler, Server Components, and more. Here's what I learned while upgrading my portfolio.",
-    date: "Sep 2026",
-    tags: ["React", "JavaScript", "Web Dev"],
-    link: "#",
-  },
-  {
-    title: "My Journey into Genomic Data Analysis",
-    excerpt: "How I went from writing web apps to co-authoring a research paper on cancer immunotherapy biomarker validation using Python and statistical methods.",
-    date: "Aug 2026",
-    tags: ["Research", "Python", "Data Science"],
-    link: "#",
-  },
-  {
-    title: "Building a Full-Stack App with Node.js & MySQL",
-    excerpt: "Lessons learned from building an Employee Task Management System with JWT auth, role-based access, and real-time notifications.",
-    date: "Jul 2026",
-    tags: ["Node.js", "MySQL", "Backend"],
-    link: "#",
-  },
-];
+import { blogPosts } from './blogs';
+export { blogPosts };
