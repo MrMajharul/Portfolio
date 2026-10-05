@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="footer-left">
           <a href="#" onClick={e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}} className="footer-logo">
             <img src="/logo.jpg" alt="MI logo" className="footer-logo-img" />
-            Majharul<span className="logo-accent">.dev</span>
+            Majharul <span className="logo-accent">Islam</span>
           </a>
           <p className="footer-tagline">CSE student · Researcher · Builder</p>
         </div>

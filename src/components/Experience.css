@@ -98,8 +98,107 @@
   opacity: 0.6;
 }
 
+/* Committee History Sub-timeline / List */
+.exp-committee {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.exp-committee-label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-hi);
+  margin-bottom: 10px;
+}
+
+.exp-committee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-committee-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  color: var(--text);
+  font-size: 13px;
+  transition: all 0.22s ease;
+}
+
+.exp-committee-item:hover {
+  background: rgba(99, 102, 241, 0.09);
+  border-color: rgba(99, 102, 241, 0.35);
+  transform: translateX(4px);
+  color: var(--text);
+}
+
+.exp-committee-item.current {
+  border-color: rgba(99, 102, 241, 0.28);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.exp-committee-year {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-hi);
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.exp-committee-role {
+  flex: 1;
+  font-weight: 500;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.exp-committee-badge {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.exp-committee-icon {
+  color: var(--text-muted);
+  opacity: 0.6;
+  transition: transform 0.2s, opacity 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.exp-committee-item:hover .exp-committee-icon {
+  opacity: 1;
+  color: var(--primary-hi);
+  transform: translate(2px, -2px);
+}
+
 @media (max-width: 560px) {
   .exp-item { grid-template-columns: 28px 1fr; gap: 12px; }
   .exp-content { padding: 18px 16px; }
   .exp-header { flex-direction: column; }
+  .exp-committee-item { flex-wrap: wrap; gap: 8px; }
 }

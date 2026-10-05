@@ -63,9 +63,30 @@ export const experience = [
     title: "Treasurer · Former Graphics Coordinator & Executive",
     org: "Green University Computer Club (GUCC)",
     period: "2024 — Present",
+    committeeHistory: [
+      {
+        year: "2026",
+        role: "Treasurer",
+        current: true,
+        url: "https://gucc.green.edu.bd/executives/2026",
+      },
+      {
+        year: "2025",
+        role: "Graphics and Multimedia Coordinator",
+        current: false,
+        url: "https://gucc.green.edu.bd/executives/2025",
+      },
+      {
+        year: "2024",
+        role: "Executive Member",
+        current: false,
+        url: "https://gucc.green.edu.bd/executives/2024",
+      },
+    ],
     bullets: [
-      "Oversee financial record-keeping, budget planning, and resource allocation for departmental hackathons.",
-      "Led graphic design, branding, and promotional multimedia across digital channels as Graphics Coordinator (2025–2026).",
+      "Serving as Treasurer (2026), overseeing financial record-keeping, budget planning, and resource allocation for departmental hackathons and tech initiatives.",
+      "Spearheaded branding, promotional multimedia, and design assets across digital channels as Graphics and Multimedia Coordinator (2025).",
+      "Contributed to event organization, member coordination, and technical club activities as Executive Member (2024).",
     ],
   },
 ];
@@ -176,22 +197,48 @@ export const education = [
   },
 ];
 
-export const featuredCertificate = {
-  title: "Associate Data Analyst",
-  issuer: "DataCamp",
-  credentialId: "DAA0014389060988",
-  date: "September 17, 2026",
-  badge: "/certificates/DA%20Associate%20-%20badge%20with%20outline.png",
-  link: "/certificates/DAA0014389060988.pdf",
-  verifyUrl: "https://www.datacamp.com/certificate/DAA0014389060988",
-  verificationNote: "Verified Professional Industry Certification",
-  skills: [
-    "Exploratory Data Analysis",
-    "SQL Querying & Extraction",
-    "Statistical Data Preparation",
-    "Business Intelligence & Insights",
-  ],
-};
+export const featuredCertificates = [
+  {
+    title: "Data Scientist",
+    issuer: "DataCamp",
+    credentialId: "DS0023879370066",
+    date: "September 27, 2026",
+    badge: "/certificates/DS%20Data%20Scientist%20-%20badge%20with%20outline.png",
+    link: "/certificates/DS0023879370066.pdf",
+    verifyUrl: "https://www.datacamp.com/certificate/DS0023879370066",
+    verificationNote: "Verified Professional Industry Certification",
+    accentColor: "#f59e0b",
+    description:
+      "Formally certified by DataCamp demonstrating rigorous industry proficiency in machine learning workflows, statistical modeling, exploratory data analysis, and predictive data systems.",
+    skills: [
+      "Machine Learning & Statistical Modeling",
+      "Exploratory Data Analysis & Feature Engineering",
+      "Model Evaluation & Error Metrics",
+      "Python & Advanced Data Pipelines",
+    ],
+  },
+  {
+    title: "Associate Data Analyst",
+    issuer: "DataCamp",
+    credentialId: "DAA0014389060988",
+    date: "September 17, 2026",
+    badge: "/certificates/DA%20Associate%20-%20badge%20with%20outline.png",
+    link: "/certificates/DAA0014389060988.pdf",
+    verifyUrl: "https://www.datacamp.com/certificate/DAA0014389060988",
+    verificationNote: "Verified Professional Industry Certification",
+    accentColor: "#06b6d4",
+    description:
+      "Formally certified by DataCamp for demonstrated proficiency in exploratory data analysis, relational data querying with SQL, statistical evaluation, and communicating business intelligence.",
+    skills: [
+      "Exploratory Data Analysis",
+      "SQL Querying & Extraction",
+      "Statistical Data Preparation",
+      "Business Intelligence & Insights",
+    ],
+  },
+];
+
+export const featuredCertificate = featuredCertificates[0];
 
 export const certificates = [
   {
@@ -199,70 +246,60 @@ export const certificates = [
     issuer: "IIT, Jahangirnagar University — EDGE Project",
     date: "Feb 2025",
     link: "/certificates/Certificate.pdf",
-    icon: "🐍",
   },
   {
     title: "Understanding Data Engineering",
     issuer: "DataCamp",
     date: "Sep 2026",
     link: "https://www.datacamp.com/statement-of-accomplishment/course/9374d64bfa486f39bdf1452706d043e0878bf14a",
-    icon: "🛢️",
   },
   {
     title: "Introduction to Relational Databases in SQL",
     issuer: "DataCamp",
     date: "Sep 2026",
     link: "/certificates/Introduction%20to%20Relational%20Databases%20in%20SQL.pdf",
-    icon: "🗄️",
   },
   {
     title: "Intermediate GitHub Concepts",
     issuer: "DataCamp",
     date: "Jan 2026",
     link: "/certificates/certificate (1).pdf",
-    icon: "🔀",
   },
   {
     title: "Understanding Cloud Computing",
     issuer: "DataCamp",
     date: "Jul 2025",
     link: "/certificates/certificate (5).pdf",
-    icon: "☁️",
   },
   {
     title: "Introduction to SQL Server",
     issuer: "DataCamp",
     date: "Jul 2025",
     link: "/certificates/certificate (2).pdf",
-    icon: "🗄️",
   },
   {
     title: "Introduction to Git",
     issuer: "DataCamp",
     date: "Jul 2025",
     link: "/certificates/certificate (3).pdf",
-    icon: "📦",
   },
   {
     title: "Introduction to GitHub Concepts",
     issuer: "DataCamp",
     date: "Jul 2025",
     link: "/certificates/certificate (4).pdf",
-    icon: "🐙",
   },
   {
     title: "Cyber Hygiene",
     issuer: "Certified Course",
     date: "May 2025",
     link: "/certificates/Majharul Islam3384737-Cyber_Hygiene.pdf",
-    icon: "🔒",
   },
   {
     title: "Volunteer — GUB CSE Carnival 2024",
     issuer: "Green University of Bangladesh",
     date: "2024",
     link: "/certificates/Volunteer-232002256.pdf",
-    icon: "🤝",
   },
 ];
 

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { RiExternalLinkLine } from 'react-icons/ri';
 import { experience } from '../data/portfolio';
 import './Experience.css';
 
@@ -54,6 +55,28 @@ export default function Experience() {
                     <li key={j}>{b}</li>
                   ))}
                 </ul>
+
+                {e.committeeHistory && (
+                  <div className="exp-committee">
+                    <span className="exp-committee-label">Executive Committee History</span>
+                    <div className="exp-committee-list">
+                      {e.committeeHistory.map((item, idx) => (
+                        <a
+                          key={idx}
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`exp-committee-item ${item.current ? 'current' : ''}`}
+                        >
+                          <span className="exp-committee-year">{item.year}</span>
+                          <span className="exp-committee-role">{item.role}</span>
+                          {item.current && <span className="exp-committee-badge">Current</span>}
+                          <RiExternalLinkLine className="exp-committee-icon" size={13} />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

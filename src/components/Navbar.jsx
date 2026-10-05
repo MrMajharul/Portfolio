@@ -47,7 +47,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="nav-logo" onClick={e => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); }}>
             <img src="/logo.jpg" alt="MI logo" className="nav-logo-img" />
-            <span>Majharul<span className="logo-accent">.dev</span></span>
+            <span>Majharul <span className="logo-accent">Islam</span></span>
           </a>
 
           {/* Desktop links */}

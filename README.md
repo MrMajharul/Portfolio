@@ -6,7 +6,7 @@
 
 A modern, responsive developer portfolio built with React + Vite — featuring smooth animations, live GitHub stats, dark/light mode, and a clean design system.
 
-[![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-Visit_Site-6366f1?style=for-the-badge)](https://majharul.dev)
+[![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-Visit_Site-6366f1?style=for-the-badge)](https://majharul.net)
 [![GitHub](https://img.shields.io/badge/GitHub-MrMajharul-181717?style=for-the-badge&logo=github)](https://github.com/MrMajharul)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/majharul-islam-68945326b/)
 

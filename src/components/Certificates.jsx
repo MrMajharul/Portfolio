@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { certificates, featuredCertificate } from '../data/portfolio';
+import { certificates, featuredCertificates, featuredCertificate } from '../data/portfolio';
 import {
   RiExternalLinkLine,
   RiAwardLine,
@@ -21,10 +21,13 @@ export default function Certificates() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
   const [copiedId, setCopiedId] = useState(false);
+  const certList = featuredCertificates || (featuredCertificate ? [featuredCertificate] : []);
+  const [activeCertIdx, setActiveCertIdx] = useState(0);
+  const activeCert = certList[activeCertIdx] || certList[0];
 
   const copyCredentialId = () => {
-    if (!featuredCertificate?.credentialId) return;
-    navigator.clipboard.writeText(featuredCertificate.credentialId);
+    if (!activeCert?.credentialId) return;
+    navigator.clipboard.writeText(activeCert.credentialId);
     setCopiedId(true);
     setTimeout(() => setCopiedId(false), 2000);
   };
@@ -38,15 +41,41 @@ export default function Certificates() {
         <motion.h2 className="section-title" variants={fadeUp(0.08)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
           Honors & Professional Accreditations
         </motion.h2>
-        <div className="divider" style={{ marginBottom: 40 }} />
+        <div className="divider" style={{ marginBottom: 32 }} />
 
-        {/* ── Featured Credential Frame ── */}
-        {featuredCertificate && (
+        {/* ── Certificate Switcher Tabs ── */}
+        {certList.length > 1 && (
           <motion.div
-            className="cert-featured-frame"
-            variants={fadeUp(0.12)}
+            className="cert-switcher-tabs"
+            variants={fadeUp(0.1)}
             initial="hidden"
             animate={inView ? 'show' : 'hidden'}
+          >
+            {certList.map((c, idx) => (
+              <button
+                key={c.credentialId}
+                className={`cert-switch-tab ${activeCertIdx === idx ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveCertIdx(idx);
+                  setCopiedId(false);
+                }}
+              >
+                <span className="tab-pill-title">{c.title}</span>
+                <span className="tab-pill-badge">{idx === 0 ? 'DataCamp Certified' : 'Associate'}</span>
+              </button>
+            ))}
+          </motion.div>
+        )}
+
+        {/* ── Featured Credential Frame ── */}
+        {activeCert && (
+          <motion.div
+            key={activeCert.credentialId}
+            className={`cert-featured-frame ${activeCertIdx === 0 ? 'cert-gold-theme' : 'cert-cyan-theme'}`}
+            variants={fadeUp(0.12)}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
           >
             {/* Ambient Background Glow */}
             <div className="cert-featured-glow" />
@@ -58,7 +87,7 @@ export default function Certificates() {
                 <span>FEATURED INDUSTRY CERTIFICATION</span>
               </div>
               <a
-                href={featuredCertificate.verifyUrl}
+                href={activeCert.verifyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cert-featured-status cert-status-link"
@@ -76,15 +105,15 @@ export default function Certificates() {
               <div className="cert-featured-badge-pod">
                 <div className="badge-glow-ring" />
                 <a
-                  href={featuredCertificate.verifyUrl}
+                  href={activeCert.verifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="badge-image-link"
                   title="Verify on DataCamp"
                 >
                   <img
-                    src={featuredCertificate.badge}
-                    alt={`${featuredCertificate.title} Badge`}
+                    src={activeCert.badge}
+                    alt={`${activeCert.title} Badge`}
                     className="badge-image"
                   />
                   <div className="badge-overlay-hint">
@@ -96,19 +125,19 @@ export default function Certificates() {
               {/* Right: Credential Information */}
               <div className="cert-featured-info">
                 <div className="cert-featured-meta-row">
-                  <span className="cert-featured-issuer">{featuredCertificate.issuer}</span>
+                  <span className="cert-featured-issuer">{activeCert.issuer}</span>
                   <span className="cert-meta-dot">•</span>
-                  <span className="cert-featured-date">Certified on {featuredCertificate.date}</span>
+                  <span className="cert-featured-date">Certified on {activeCert.date}</span>
                 </div>
 
                 <h3 className="cert-featured-title">
-                  {featuredCertificate.title}
+                  {activeCert.title}
                 </h3>
 
                 {/* Credential ID Card */}
                 <div className="cert-id-badge">
                   <span className="cert-id-label">Credential ID:</span>
-                  <code className="cert-id-code">{featuredCertificate.credentialId}</code>
+                  <code className="cert-id-code">{activeCert.credentialId}</code>
                   <button
                     className="cert-copy-btn"
                     onClick={copyCredentialId}
@@ -127,14 +156,14 @@ export default function Certificates() {
                 </div>
 
                 <p className="cert-featured-description">
-                  Formally certified by <strong>DataCamp</strong> for demonstrated proficiency in exploratory data analysis, relational data querying with SQL, statistical evaluation, and communicating business intelligence.
+                  {activeCert.description}
                 </p>
 
                 {/* Skills Verified */}
                 <div className="cert-skills-list">
-                  {featuredCertificate.skills?.map((skill, sIdx) => (
+                  {activeCert.skills?.map((skill, sIdx) => (
                     <span key={sIdx} className="cert-skill-pill">
-                      ✓ {skill}
+                      <RiCheckLine className="cert-check-icon" /> {skill}
                     </span>
                   ))}
                 </div>
@@ -142,7 +171,7 @@ export default function Certificates() {
                 {/* Actions */}
                 <div className="cert-featured-actions">
                   <a
-                    href={featuredCertificate.verifyUrl}
+                    href={activeCert.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cert-primary-btn"
@@ -152,7 +181,7 @@ export default function Certificates() {
                     <RiExternalLinkLine className="btn-arrow" />
                   </a>
                   <a
-                    href={featuredCertificate.link}
+                    href={activeCert.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cert-secondary-btn"
