@@ -44,6 +44,21 @@ export default function Projects() {
               animate={inView ? 'show' : 'hidden'}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
             >
+              {/* Preview image */}
+              {p.preview && (
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="proj-preview-wrap"
+                >
+                  <img src={p.preview} alt={`${p.name} preview`} className="proj-preview-img" loading="lazy" />
+                  <div className="proj-preview-overlay">
+                    <RiExternalLinkLine /> Visit Live Site
+                  </div>
+                </a>
+              )}
+
               {/* Card header */}
               <div className="proj-card-top">
                 <div className="proj-card-icon">

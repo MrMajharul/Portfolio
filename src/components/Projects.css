@@ -13,12 +13,85 @@
 }
 
 .proj-card {
-  padding: 28px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 0;
   cursor: default;
+  overflow: hidden;
 }
+
+/* ── Preview Image ── */
+.proj-preview-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.proj-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
+}
+
+.proj-preview-wrap:hover .proj-preview-img {
+  transform: scale(1.06);
+  filter: brightness(0.6);
+}
+
+.proj-preview-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.proj-preview-wrap:hover .proj-preview-overlay {
+  opacity: 1;
+}
+
+/* ── Card body padding for cards with/without preview ── */
+.proj-card > .proj-card-top,
+.proj-card > .proj-name-row,
+.proj-card > .proj-desc,
+.proj-card > .proj-stack {
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.proj-card > .proj-card-top {
+  padding-top: 20px;
+}
+
+.proj-card > .proj-stack {
+  padding-bottom: 24px;
+}
+
+.proj-card > .proj-name-row,
+.proj-card > .proj-desc {
+  margin-bottom: 0;
+}
+
+/* Spacing between elements inside card */
+.proj-card > .proj-card-top { margin-bottom: 14px; }
+.proj-card > .proj-name-row { margin-bottom: 14px; }
+.proj-card > .proj-desc { margin-bottom: 14px; }
+.proj-card > .proj-stack { margin-top: auto; }
 .proj-featured {
   border-color: rgba(99,102,241,0.3);
   background: rgba(99,102,241,0.04);

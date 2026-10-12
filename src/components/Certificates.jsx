@@ -203,35 +203,30 @@ export default function Certificates() {
           </p>
         </div>
 
-        {/* ── Cert Grid ── */}
-        <div className="cert-grid">
+        {/* ── Cert List ── */}
+        <div className="cert-list">
           {certificates.map((cert, i) => (
             <motion.a
               key={i}
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="cert-card"
-              variants={fadeUp(0.16 + i * 0.05)}
+              className="cert-list-item"
+              variants={fadeUp(0.16 + i * 0.03)}
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
             >
-              <div className="cert-accent" />
-              <div className="cert-body">
-                <div className="cert-top">
-                  <div className="cert-icon-wrap">
-                    <RiAwardLine className="cert-icon-svg" />
-                  </div>
-                  <span className="cert-date">{cert.date}</span>
-                </div>
-                <h3 className="cert-title">{cert.title}</h3>
-                <p className="cert-issuer">{cert.issuer}</p>
-                <div className="cert-footer">
-                  <span className="cert-view">
-                    View Certificate <RiExternalLinkLine />
-                  </span>
-                </div>
+              <div className="cert-list-icon">
+                <RiAwardLine />
               </div>
+              <div className="cert-list-info">
+                <h3 className="cert-list-title">{cert.title}</h3>
+                <span className="cert-list-issuer">{cert.issuer}</span>
+              </div>
+              <span className="cert-list-date">{cert.date}</span>
+              <span className="cert-list-link">
+                View <RiExternalLinkLine />
+              </span>
             </motion.a>
           ))}
         </div>

@@ -43,7 +43,7 @@ export const experience = [
   {
     title: "IT Intern",
     org: "Dhaka University Research Society (DURS)",
-    period: "2026 — Present",
+    period: "July 2026 — Present",
     bullets: [
       "Manage internal digital infrastructure and data documentation supporting academic research projects.",
       "Maintain platforms and automate workflow procedures; provide IT troubleshooting for research events.",
@@ -51,16 +51,16 @@ export const experience = [
     ],
   },
   {
-    title: "Web Developer, Executive Committee",
+    title: "Former Web Developer, Executive Committee",
     org: "Green University Research & Publication Community (GURPC)",
-    period: "2026 — Present",
+    period: "January 2026 — September 2026",
     bullets: [
       "Architect and maintain the official web platform for research publication tracking, event registration, and community outreach.",
       "Ensure responsive design, cross-device performance, and secure data handling for members and authors.",
     ],
   },
   {
-    title: "Treasurer · Former Graphics Coordinator & Executive",
+    title: "Treasurer · Former Graphics and Multimedia Coordinator & Executive",
     org: "Green University Computer Club (GUCC)",
     period: "2024 — Present",
     committeeHistory: [
@@ -92,6 +92,17 @@ export const experience = [
 ];
 
 export const projects = [
+   {
+    name: "Istiqamaah",
+    description:
+      "Istiqamaah — Muslim Habit & Productivity App",
+    stack: ["TypeScript", "React", "Node.js", "PLpgSQL", "Docker"],
+    github: "https://github.com/MrMajharul/Habit_tracker",
+    live: "https://istiqamaah.vercel.app/",
+    preview: "/previews/istiqamaah.png",
+    featured: true,
+    badge: "Live",
+  },
   {
     name: "UConnect",
     description:
@@ -107,8 +118,9 @@ export const projects = [
     description:
       "Official platform for the Green University Research & Publication Community — showcases papers, announcements, and events with structured data workflows.",
     stack: ["TypeScript", "JavaScript", "CSS3"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/GURPC/GURPC",
+    live: "https://gurpc.green.edu.bd/",
+    preview: "/previews/gurpc.png",
     featured: true,
     badge: "Live",
   },
@@ -117,8 +129,9 @@ export const projects = [
     description:
       "Interactive digital portal showcasing student journalism, media productions, and event calendars with continuous deployment on Vercel.",
     stack: ["JavaScript", "Vercel CI/CD"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/MrMajharul/JMC_Media_Club",
+    live: "https://jmc-club.vercel.app/",
+    preview: "/previews/jmc.png",
     featured: true,
     badge: "Live",
   },
